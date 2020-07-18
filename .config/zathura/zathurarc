@@ -1,0 +1,7 @@
+set recolor
+set recolor-lightcolor \#121212
+set recolor-darkcolor \#8E7A66
+set recolor-keephue
+set default-bg \#000000
+map <C-i> recolor
+set selection-clipboard clipboard
