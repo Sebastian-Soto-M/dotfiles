@@ -1,47 +1,41 @@
 {
-    "suggest.noselect": false,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "markdown",
-        "java",
-        "graphql",
-        "scss",
-        "css",
-        "json"
-    ],
-    "prettier.disableLanguages": [
-        "vue"
-    ],
-    "html.filetypes": [
-        "html",
-        "jinja",
-        "jinja.html"
-    ],
-    "prettier.bracketSpacing": true,
-    "prettier.printWidth": 80,
-    "prettier.trailingComma": "all",
-    "python.terminal.executeInFileDir": true,
-    "python.autoComplete.addBrackets": true,
-    "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
-    "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
-    "java.format.onType.enabled": true,
-    "java.codeGeneration.useBlocks": true,
-    "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
-    "html.enable": true,
-    "html.format.enable": false,
-    "html.autoClosingTags": true,
-    "html.format.indentInnerHtml": true,
-    "emmet.showAbbreviationSuggestions": true,
-    "emmet.showExpandedAbbreviation": "always",
-    "emmet.showSuggestionsAsSnippets": true,
-    "emmet.includeLanguages": {
-        "jinja.html": "html",
-        "jinja": "html"
-    },
-    "snippets.extends": {
-        "html": ["jinja", "jinja.html"],
-        "jinja": ["html", "jinja.html"],
-        "jinja.html": ["jinja", "html"]
-    }
-
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "zsh",
+    "markdown",
+    "java",
+    "graphql",
+    "scss",
+    "css",
+    "json"
+  ],
+  "prettier.disableLanguages": ["vue"],
+  "html.filetypes": ["html", "jinja", "jinja.html"],
+  "prettier.bracketSpacing": true,
+  "prettier.printWidth": 80,
+  "prettier.trailingComma": "all",
+  "python.terminal.executeInFileDir": true,
+  "python.autoComplete.addBrackets": true,
+  "java.home": "/home/snsm/.sdkman/candidates/java/current",
+  "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+  "java.format.onType.enabled": true,
+  "java.codeGeneration.useBlocks": true,
+  "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
+  "html.enable": true,
+  "html.format.enable": false,
+  "html.autoClosingTags": true,
+  "html.format.indentInnerHtml": true,
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "jinja.html": "html",
+    "jinja": "html"
+  },
+  "snippets.extends": {
+    "html": ["jinja", "jinja.html"],
+    "jinja": ["html", "jinja.html"],
+    "jinja.html": ["jinja", "html"]
+  }
 }

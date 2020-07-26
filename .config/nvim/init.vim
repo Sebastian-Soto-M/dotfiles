@@ -519,6 +519,10 @@ let g:bujo#window_width = 60
 noremap <silent> <Leader>tl :Todo g<CR>
 
 " |-------------|
+" | system copy |
+let g:system_copy#copy_command='xclip -sel clipboard'
+
+" |-------------|
 " | Preferences |
 " | Preferences |
 " Read jinja templates

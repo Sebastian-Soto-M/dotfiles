@@ -52,9 +52,9 @@ export FZF_DEFAULT_OPTS="
 "
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
-export FZF_DEFAULT_COMMAND="fdfind -t f -t d $FD_OPTIONS"
+export FZF_DEFAULT_COMMAND="fd -t f -t d $FD_OPTIONS"
 export FZF_CTRl_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fdfind --type d $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
