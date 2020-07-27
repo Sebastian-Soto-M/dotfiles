@@ -5,41 +5,48 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+######################
+# CUSTOM USR CONFIGS #
+######################
+DISABLE_AUTO_TITLE="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Use vim keys in tab complete menu:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
+######################
+# ZSH PLUGIN CONFIGS #
+######################
 # Path to your oh-my-zsh installation.
 export ZSH="/home/snsm/.oh-my-zsh"
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-plugins=(zsh_reload web-search zsh-vim-mode git tmux man alias-finder fzf)
-
+# TMUX configuration
+ZSH_TMUX_AUTOCONNECT=true
+# ALIAS_FINDER
+ZSH_ALIAS_FINDER_AUTOMATIC=true
+# git auto fetch
+GET_AUTO_FETCH_INTERVAL=1200
+# zsh-autosuggestions
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="git clone*"
+# zsh-vim-mode (plugin crashes fzf keys)
+plugins=(zsh-autosuggestions alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior tmux virtualenvwrapper web-search zsh_reload vim-mode)
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# Path to fzf install dir
+###########################
+# TERMINAL TOOLS  CONFIGS #
+###########################
+# FZF
 export FZF_BASE=/usr/bin/fzf
-
-# FZF configuration
 export FD_OPTIONS="-Hi --follow --exclude .git --exclude node_modules --exclude __pycache__"
 export FZF_DEFAULT_OPTS="
 --no-mouse --height 50% -1 --reverse --multi --inline-info
@@ -56,14 +63,16 @@ export FZF_DEFAULT_COMMAND="fd -t f -t d $FD_OPTIONS"
 export FZF_CTRl_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+######################
+#  END-FILE CONFIGS  #
+######################
 export SDKMAN_DIR="/home/snsm/.sdkman"
 [[ -s "/home/snsm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/snsm/.sdkman/bin/sdkman-init.sh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# fish like syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
