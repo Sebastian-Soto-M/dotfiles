@@ -33,13 +33,8 @@ ZSH_TMUX_AUTOCONNECT=true
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 # git auto fetch
 GET_AUTO_FETCH_INTERVAL=1200
-# zsh-autosuggestions
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="git clone*"
-# zsh-vim-mode (plugin crashes fzf keys)
-plugins=(zsh-autosuggestions alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior tmux virtualenvwrapper web-search zsh_reload vim-mode)
+
+plugins=(alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior tmux virtualenvwrapper web-search zsh_reload) 
 source $ZSH/oh-my-zsh.sh
 
 ###########################
@@ -66,6 +61,7 @@ export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 ######################
 #  END-FILE CONFIGS  #

@@ -50,7 +50,6 @@ Plug 'dracula/vim',{'as':'dracula'}
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix bracey'}
 Plug 'christoomey/vim-system-copy'      " New Plugin
 " Tools
-Plug 'vuciv/vim-bujo'
 Plug  'tpope/vim-abolish' 
 call plug#end()
 " | Plugins |
@@ -510,14 +509,6 @@ au BufWrite *.html,*.java,*.xml :Autoformat
 " | Tools       |
 " | Tools       |
 " |-------------|
-" | Bujo        |
-nmap <C-S> <Plug>BujoAddnormal
-imap <C-S> <Plug>BujoAddinsert
-nmap <C-Q> <Plug>BujoChecknormal
-imap <C-Q> <Plug>BujoCheckinsert
-let g:bujo#window_width = 60
-noremap <silent> <Leader>tl :Todo g<CR>
-
 " |-------------|
 " | system copy |
 let g:system_copy#copy_command='xclip -sel clipboard'
@@ -528,6 +519,7 @@ let g:system_copy#paste_command='xclip -sel clipboard -o'
 " | Preferences |
 " Read jinja templates
 au BufNewFile,BufRead *.html,*.jinja,*.jinja.html set ft=jinja
-
+" Auto indent brackets
+inor {<CR> {<CR>}<C-o>O
 " Simple math operation
 ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>

@@ -20,7 +20,7 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/dark-violets-256.theme
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/dark-gray-256.theme
-#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+include /usr/share/doc/task/rc/dark-gray-blue-256.theme
 #include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
@@ -66,3 +66,7 @@ color.uda.priority.L=color8
 color.undo.after=color2
 color.undo.before=color1
 color.warning=bold red
+report.dtl.description=Project report by urgency and date
+report.dtl.columns=id,description,project,tags,due,depends,urgency
+report.dtl.sort=project-/,urgency-,due-
+report.dtl.filter=status:pending
