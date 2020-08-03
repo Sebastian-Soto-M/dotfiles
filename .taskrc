@@ -20,7 +20,7 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/dark-violets-256.theme
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/dark-gray-256.theme
-include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
 #include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
@@ -59,14 +59,27 @@ color.sync.added=color10
 color.sync.changed=color11
 color.sync.rejected=color9
 color.tag.next=color3
-color.tagged=color10
+color.tagged=color7
 color.uda.priority.H=color15
 color.uda.priority.M=color7
 color.uda.priority.L=color8
 color.undo.after=color2
 color.undo.before=color1
 color.warning=bold red
+
+# reports
 report.dtl.description=Project report by urgency and date
-report.dtl.columns=id,description,project,tags,due,depends,urgency
-report.dtl.sort=project-/,urgency-,due-
+report.dtl.columns=id,priority,description,project,due,depends,urgency
+report.dtl.sort=project-/,urgency-,due+,depends+
 report.dtl.filter=status:pending
+
+# date formats
+dateformat=d-m-yTH:N
+# contexts
+alias.@=context
+context.shopped=project:shopped
+context.home=project:home
+context.custom=project:customization or project:automation
+context.university=project:shopped or project:unv
+context.study=+quiz or +exam or +presentation
+context=custom

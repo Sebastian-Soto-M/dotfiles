@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'               " New Plugin
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc'
 "Plug 'christoomey/vim-titlecase'        " New Plugin
 Plug 'christoomey/vim-sort-motion'      " New Plugin
 Plug 'Chiel92/vim-autoformat'           " New Plugin 
@@ -519,7 +520,13 @@ let g:system_copy#paste_command='xclip -sel clipboard -o'
 " | Preferences |
 " Read jinja templates
 au BufNewFile,BufRead *.html,*.jinja,*.jinja.html set ft=jinja
+" Auto source Xresources
+au BufWritePost .Xresources !xrdb <afile>
 " Auto indent brackets
 inor {<CR> {<CR>}<C-o>O
 " Simple math operation
 ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
+noremap <silent> <leader>w :wa<CR>
+" Auto register change on new line insert mode
+inoremap <C-K> <C-O>O<C-G>u
+inoremap <C-J> <C-O>o<C-G>u

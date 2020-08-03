@@ -34,7 +34,7 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 # git auto fetch
 GET_AUTO_FETCH_INTERVAL=1200
 
-plugins=(alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior tmux virtualenvwrapper web-search zsh_reload) 
+plugins=(alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior timewarrior tmux virtualenvwrapper web-search zsh_reload) 
 source $ZSH/oh-my-zsh.sh
 
 ###########################
@@ -66,6 +66,7 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 ######################
 #  END-FILE CONFIGS  #
 ######################
+export PATH="$HOME/.local/bin:$PATH"
 export SDKMAN_DIR="/home/snsm/.sdkman"
 [[ -s "/home/snsm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/snsm/.sdkman/bin/sdkman-init.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
