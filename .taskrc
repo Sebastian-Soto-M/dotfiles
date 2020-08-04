@@ -78,8 +78,9 @@ dateformat=d-m-yTH:N
 # contexts
 alias.@=context
 context.shopped=project:shopped
-context.home=project:home
+context.me=project:home or project:personal
 context.custom=project:customization or project:automation
-context.university=project:shopped or project:unv
+context.unv=project:shopped or project:unv
 context.study=+quiz or +exam or +presentation
-context=custom
+context.vm=project:vm
+context=vm

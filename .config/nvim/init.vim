@@ -530,3 +530,5 @@ noremap <silent> <leader>w :wa<CR>
 " Auto register change on new line insert mode
 inoremap <C-K> <C-O>O<C-G>u
 inoremap <C-J> <C-O>o<C-G>u
+inoremap jj <C-O>j<C-G>u
+inoremap kk <C-O>k<C-G>u
