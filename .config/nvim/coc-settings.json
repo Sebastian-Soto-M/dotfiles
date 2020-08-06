@@ -43,5 +43,6 @@
     "jinja": ["html", "jinja.html"],
     "jinja.html": ["jinja", "html"]
   },
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "tabnine.disable_filetypes": ["markdown", "txt"]
 }
