@@ -22,6 +22,8 @@
   "html.format.indentInnerHtml": true,
   "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
   "java.codeGeneration.useBlocks": true,
+  "java.codeGeneration.generateComments": false,
+  "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
   "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "java.home": "/home/snsm/.sdkman/candidates/java/current",
@@ -44,5 +46,5 @@
     "jinja.html": ["jinja", "html"]
   },
   "suggest.noselect": false,
-  "tabnine.disable_filetypes": ["markdown", "txt"]
+  "tabnine.disable_filetypes": ["markdown", "txt", "java"]
 }

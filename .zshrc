@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 ###########################
 # FZF
 export FZF_BASE=/usr/bin/fzf
-export FD_OPTIONS="-Hi --follow --exclude .git --exclude node_modules --exclude __pycache__"
+export FD_OPTIONS="-pi --follow --exclude .git --exclude node_modules --exclude __pycache__"
 export FZF_DEFAULT_OPTS="
 --no-mouse --height 50% -1 --reverse --multi --inline-info
 --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {} ) 2> /dev/null | head -300'

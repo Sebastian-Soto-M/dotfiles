@@ -69,9 +69,14 @@ color.warning=bold red
 
 # reports
 report.dtl.description=Project report by urgency and date
-report.dtl.columns=id,priority,description,project,due,depends,urgency
+report.dtl.columns=id,priority,due.relative,description.truncated_count,project,depends,urgency
 report.dtl.sort=project-/,urgency-,due+,depends+
 report.dtl.filter=status:pending
+
+report.wk.description=Report for task due during the week
+report.wk.columns=id,priority,due.relative,description.truncated_count,project,depends
+report.wk.sort=project-/,urgency-,due+,depends+
+report.wk.filter=status:pending and due.before:7d
 
 # date formats
 dateformat=d-m-yTH:N
@@ -83,4 +88,4 @@ context.custom=project:customization or project:automation
 context.unv=project:shopped or project:unv
 context.study=+quiz or +exam or +presentation
 context.vm=project:vm
-context=vm
+default.command=wk

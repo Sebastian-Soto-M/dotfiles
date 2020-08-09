@@ -16,7 +16,6 @@ let g:NERDTreeIgnore = ['^node_modules$']
 let g:coc_global_extensions = [
             \ 'coc-actions',
             \ 'coc-css',
-            \ 'coc-tabnine',
             \ 'coc-emmet',
             \ 'coc-eslint',
             \ 'coc-git',
@@ -28,6 +27,7 @@ let g:coc_global_extensions = [
             \ 'coc-prettier',
             \ 'coc-python',
             \ 'coc-snippets',
+            \ 'coc-tabnine',
             \ 'coc-tag',
             \ 'coc-vimlsp',
             \ 'coc-xml',
