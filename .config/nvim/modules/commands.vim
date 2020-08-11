@@ -26,3 +26,4 @@ autocmd FileType properties,jproperties,json let b:autoformat_autoindent=0
 au BufWrite *.html,*.java,*.xml :Autoformat
 "" Format mapping
 "noremap <F3> :Autoformat<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

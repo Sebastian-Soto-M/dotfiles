@@ -34,7 +34,7 @@ instantwm.focus: #7a88cf
 *.color10:    #5AF78E
 
 ! yellow
-*.color3:     #F1FA8C
+*.color3:     #FFB86C
 *.color11:    #F4F99D
 
 ! blue

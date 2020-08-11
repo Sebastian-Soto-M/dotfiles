@@ -1,22 +1,8 @@
-let g:NERDTreeGitStatusWithFlags = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:NERDTreeGitStatusNodeColorization = 1
-let g:NERDTreeColorMapCustom = {
-            \ "Staged"    : "#0ee375",
-            \ "Modified"  : "#d9bf91",
-            \ "Renamed"   : "#51C9FC",
-            \ "Untracked" : "#FCE77C",
-            \ "Unmerged"  : "#FC51E6",
-            \ "Dirty"     : "#FFBD61",
-            \ "Clean"     : "#87939A",
-            \ "Ignored"   : "#808080",
-            \ }
-let g:NERDTreeIgnore = ['^node_modules$']
-
 let g:coc_global_extensions = [
             \ 'coc-actions',
             \ 'coc-css',
             \ 'coc-emmet',
+            \ 'coc-explorer',
             \ 'coc-eslint',
             \ 'coc-git',
             \ 'coc-godot',
@@ -31,7 +17,45 @@ let g:coc_global_extensions = [
             \ 'coc-tag',
             \ 'coc-vimlsp',
             \ 'coc-xml',
+            \ 'coc-yank',
             \ ]
+
+let g:coc_explorer_global_presets = {
+            \   'dotfiles': {
+            \     'root-uri': '~/.dotfiles',
+            \   },
+            \   'vim': {
+            \     'root-uri': '~/.config/nvim',
+            \   },
+            \   'tab': {
+            \     'position': 'tab',
+            \     'quit-on-open': v:true,
+            \   },
+            \   'floating': {
+            \     'position': 'floating',
+            \     'open-action-strategy': 'sourceWindow',
+            \   },
+            \   'floatingTop': {
+            \     'position': 'floating',
+            \     'floating-position': 'center-top',
+            \     'open-action-strategy': 'sourceWindow',
+            \   },
+            \   'floatingLeftside': {
+            \     'position': 'floating',
+            \     'floating-position': 'left-center',
+            \     'floating-width': 50,
+            \     'open-action-strategy': 'sourceWindow',
+            \   },
+            \   'floatingRightside': {
+            \     'position': 'floating',
+            \     'floating-position': 'right-center',
+            \     'floating-width': 50,
+            \     'open-action-strategy': 'sourceWindow',
+            \   },
+            \   'simplify': {
+            \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+            \   }
+            \ }
 
 " if hidden is not set, TextEdit might fail.
 set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup
@@ -150,3 +174,6 @@ let g:formatdef_cstm_java='"astyle --mode=java --style=java"'
 let g:formatters_java=['cstm_java']
 let g:user_emmet_leader_key=','
 let g:vim_markdown_folding_disabled=1
+
+let g:loaded_netrw=1
+let g:netrw_loaded_netrwPlugin=1

@@ -11,14 +11,11 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-surround'
+Plug 'jparise/vim-graphql'
 " Tree
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 " Format
 Plug 'scrooloose/nerdcommenter'
@@ -32,6 +29,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'itchyny/lightline.vim'
+Plug 'josa42/vim-lightline-coc'
 Plug 'itchyny/vim-gitbranch'
 Plug 'majutsushi/tagbar'
 Plug 'bananushka/taboo.vim'
