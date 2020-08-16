@@ -177,3 +177,5 @@ let g:vim_markdown_folding_disabled=1
 
 let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
+
+let g:goyo_width='80%'

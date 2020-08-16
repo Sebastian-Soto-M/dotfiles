@@ -23,7 +23,7 @@ au BufWritePost .Xresources !xrdb <afile>
 " disabled autoindent filetypes
 autocmd FileType properties,jproperties,json let b:autoformat_autoindent=0
 " Format on save else use prettier
-au BufWrite *.html,*.java,*.xml :Autoformat
+au BufWrite *.html,*.java,*.xml,*.md,*.sh :Autoformat
 "" Format mapping
-"noremap <F3> :Autoformat<CR>
+noremap <A-f> :Autoformat<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

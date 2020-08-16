@@ -117,11 +117,12 @@ nmap <silent> <leader>[ :tabp<CR>
 nmap <silent> <leader>] :tabn<CR>
 nmap <silent> <leader>x :tabclose<CR>
 noremap <F2> :TabooRename
+noremap <silent> <F3> :Goyo<CR>
 
 " personal mappings
 inor {<CR> {<CR>}<C-o>O
 inoremap jk <ESC>
-map <F6> :setlocal spell! spelllang=es<CR>
+map <silent> <F6> :setlocal spell! spelllang=es<CR>
 map <leader>tb :TableModeToggle<CR>
 map <leader>tg :TagbarToggle<CR>
 nnoremap <CR> :nohlsearch<cr>
