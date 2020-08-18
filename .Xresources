@@ -22,8 +22,8 @@ instantwm.focus: #7a88cf
 *.foreground: #F8F8F2
 
 ! black
-*.color0:     #000000
-*.color8:     #4D4D4D
+*.color0:     #21222C
+*.color8:     #44475A
 
 ! red
 *.color1:     #FF5555
