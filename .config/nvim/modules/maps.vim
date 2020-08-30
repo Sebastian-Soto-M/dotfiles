@@ -1,8 +1,6 @@
 " navigation
 inoremap <C-J> <C-O>o<C-G>u
 inoremap <C-K> <C-O>O<C-G>u
-inoremap jj <C-O>j<C-G>u
-inoremap kk <C-O>k<C-G>u
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -21,9 +19,6 @@ nmap <silent> <space>et :CocCommand explorer --preset tab<CR>
 nmap <silent> <space>el :CocList explPresets<CR>
 nmap <silent> <space><space> :CocCommand explorer --toggle<CR>
 
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 nmap ++ <plug>NERDCommenterToggle
@@ -41,6 +36,7 @@ endfunction
 
 " refactor
 nmap <leader>a  <Plug>(coc-codeaction)
+nmap <space>s  :CocSearch 
 nmap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>rr <Plug>(coc-rename)

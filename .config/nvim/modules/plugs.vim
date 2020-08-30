@@ -25,6 +25,7 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'christoomey/vim-sort-motion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'lervag/vimtex'
 " Interface
 Plug 'bananushka/taboo.vim'
 Plug 'chrisbra/Colorizer'
@@ -41,5 +42,6 @@ Plug 'dracula/vim',{'as':'dracula'}
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix bracey'}
 Plug 'christoomey/vim-system-copy'
 " Tools
-Plug  'tpope/vim-abolish' 
+Plug 'tpope/vim-abolish' 
+Plug 'habamax/vim-godot'
 call plug#end()

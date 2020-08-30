@@ -2,10 +2,9 @@ let g:coc_global_extensions = [
             \ 'coc-actions',
             \ 'coc-css',
             \ 'coc-emmet',
-            \ 'coc-explorer',
             \ 'coc-eslint',
+            \ 'coc-explorer',
             \ 'coc-git',
-            \ 'coc-godot',
             \ 'coc-html',
             \ 'coc-java',
             \ 'coc-json',
@@ -13,17 +12,14 @@ let g:coc_global_extensions = [
             \ 'coc-prettier',
             \ 'coc-python',
             \ 'coc-snippets',
-            \ 'coc-tabnine',
             \ 'coc-tag',
             \ 'coc-vimlsp',
+            \ 'coc-vimtex',
             \ 'coc-xml',
             \ 'coc-yank',
             \ ]
 
 let g:coc_explorer_global_presets = {
-            \   'dotfiles': {
-            \     'root-uri': '~/.dotfiles',
-            \   },
             \   'vim': {
             \     'root-uri': '~/.config/nvim',
             \   },
@@ -179,3 +175,6 @@ let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
 
 let g:goyo_width='80%'
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'

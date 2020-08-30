@@ -43,6 +43,13 @@
   "java.format.onType.enabled": true,
   "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "java.home": "/home/snsm/.sdkman/candidates/java/current",
+  "languageserver": {
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gdscript"],
+      "port": 6008
+    }
+  },
   "prettier.bracketSpacing": true,
   "prettier.disableLanguages": ["vue"],
   "prettier.printWidth": 80,
@@ -55,12 +62,12 @@
   "python.autoUpdateLanguageServer": true,
   "python.jediEnabled": true,
   "python.terminal.executeInFileDir": true,
+  "python.sortImports.path": "/home/snsm/.local/bin/isort",
   "python.venvPath": "~/.virtualenvs",
   "snippets.extends": {
     "html": ["jinja", "jinja.html"],
     "jinja": ["html", "jinja.html"],
     "jinja.html": ["jinja", "html"]
   },
-  "suggest.noselect": false,
-  "tabnine.disable_filetypes": ["markdown", "txt", "java"]
+  "suggest.noselect": false
 }

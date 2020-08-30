@@ -31,15 +31,35 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_TMUX_AUTOCONNECT=true
 # ALIAS_FINDER
 ZSH_ALIAS_FINDER_AUTOMATIC=true
-# git auto fetch
-GET_AUTO_FETCH_INTERVAL=1200
 
-plugins=(alias-finder fzf git git-auto-fetch gitignore jenv man mvn pip systemd taskwarrior timewarrior tmux virtualenvwrapper web-search zsh_reload) 
+plugins=(
+    alias-finder
+    colored-man-pages
+    fzf
+    git
+    gitignore
+    jenv
+    man
+    mvn
+    pip
+    systemd
+    taskwarrior
+    timewarrior
+    tmux
+    virtualenvwrapper
+    web-search
+    zsh_reload
+) 
 source $ZSH/oh-my-zsh.sh
 
 ###########################
 # TERMINAL TOOLS  CONFIGS #
 ###########################
+# bat
+export BAT_THEME="ansi-dark"
+export  BAT_STYLE="numbers,grid"
+# asdf
+. $HOME/.asdf/asdf.sh
 # FZF
 export FZF_BASE=/usr/bin/fzf
 export FD_OPTIONS="-pi --follow --exclude .git --exclude node_modules --exclude __pycache__"
@@ -67,7 +87,9 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #  END-FILE CONFIGS  #
 ######################
 export PATH="$HOME/.local/bin:$PATH"
+export GIT_PAGER="bat"
 export SDKMAN_DIR="/home/snsm/.sdkman"
+
 [[ -s "/home/snsm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/snsm/.sdkman/bin/sdkman-init.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
