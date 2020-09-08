@@ -1,23 +1,5 @@
 ! Dracula
 
-instantwm.font: FiraCode:size=11
-
-instantwm.bgcolor: #212337
-instantwm.hovershadowcolor: #5c669b
-instantwm.hoverbgcolor: #7a88cf
-
-instantwm.minimize: #7a88cf
-instantwm.darkminimize: #5c669b
-
-instantwm.darkactivetag: #FF79Ce
-instantwm.activetag: #FF92Da
-
-instantwm.hoverfocus: #7a64a0
-instantwm.darkhoverfocus: #6e5991
-
-instantwm.darkfocus: #5c669b
-instantwm.focus: #7a88cf
-
 *.background: #282A36
 *.foreground: #F8F8F2
 
@@ -53,8 +35,28 @@ instantwm.focus: #7a88cf
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
-URxvt.font: xft:Fira Code Nerd Font Mono:size=13
-! instantos-general
-URxvt.scrollBar: false
-URxvt.perl-ext-common: resize-font
-Xcursor.theme: paper-instantos
+dwm.normbordercolor: #6272A4
+dwm.normbgcolor: #282A36
+dwm.normfgcolor: #BFBFBF
+dwm.selbordercolor: #9AEDFE
+dwm.selbgcolor: #BD93F9
+dwm.selfgcolor: #F8F8F2
+
+!instantwm.font: FiraCode:size=11
+
+!instantwm.bgcolor: #212337
+!instantwm.hovershadowcolor: #5c669b
+!instantwm.hoverbgcolor: #7a88cf
+
+!instantwm.minimize: #7a88cf
+!instantwm.darkminimize: #5c669b
+
+!instantwm.darkactivetag: #FF79Ce
+!instantwm.activetag: #FF92Da
+
+!instantwm.hoverfocus: #7a64a0
+!instantwm.darkhoverfocus: #6e5991
+
+!instantwm.darkfocus: #5c669b
+!instantwm.focus: #7a88cf
+

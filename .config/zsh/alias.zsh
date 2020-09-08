@@ -7,12 +7,11 @@ alias unv="/usr/bin/git --git-dir=$HOME/universidad/.unv/ --work-tree=$HOME/univ
 edtr=nvim
 
 alias e10="$edtr ~/.p10k.zsh"
-alias ealias="$edtr $ZSH/custom/ssm_alias.zsh"
-alias ebrc="$edtr ~/.bashrc"
+alias ealias="$edtr $ZDOTDIR/alias.zsh"
 alias envrc="cd ~/.config/nvim/"
 alias ep="$edtr ~/.config/picom/picom.conf"
 alias etmx="$edtr $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias etrc="$edtr ~/.taskrc"
+alias etrc="$edtr $TASKRC"
 alias ezsh="$edtr $XDG_CONFIG_HOME/zsh/.zshrc"
 alias eze="$edtr $HOME/.zshenv"
 
