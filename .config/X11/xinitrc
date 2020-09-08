@@ -1,0 +1,15 @@
+#!/bin/sh
+
+userresources=$HOME/.Xresources
+sysresources=/etc/X11/xinit/.Xresources
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+xrandr -s 1680x1050 &
+feh --no-fehbg --bg-scale ~/Downloads/wp.jpg &
+firefox &
+st &
+exec dwm
