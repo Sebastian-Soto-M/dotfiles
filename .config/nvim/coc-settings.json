@@ -42,7 +42,7 @@
   "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
   "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
-  "java.home": "/home/snsm/.sdkman/candidates/java/current",
+  "java.home": "/home/snsm/.config/asdf/shims/java",
   "languageserver": {
     "godot": {
       "host": "127.0.0.1",

@@ -35,6 +35,7 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 
 plugins=(
     alias-finder
+    asdf
     colored-man-pages
     fzf
     git
@@ -52,6 +53,7 @@ plugins=(
     zsh_reload
 ) 
 source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/alias.zsh
 
 ###########################
 # TERMINAL TOOLS  CONFIGS #
@@ -61,6 +63,7 @@ export BAT_THEME="ansi-dark"
 export  BAT_STYLE="numbers,grid"
 # asdf
 . $ASDF_DATA_DIR/asdf.sh
+. $ASDF_DATA_DIR/plugins/java/set-java-home.zsh
 # FZF
 export FZF_BASE=/usr/bin/fzf
 export FD_OPTIONS="-pi --follow --exclude .git --exclude node_modules --exclude __pycache__"
@@ -96,3 +99,6 @@ export SDKMAN_DIR="/home/snsm/.sdkman"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # fish like syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

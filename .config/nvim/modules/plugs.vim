@@ -44,4 +44,5 @@ Plug 'christoomey/vim-system-copy'
 " Tools
 Plug 'tpope/vim-abolish' 
 Plug 'habamax/vim-godot'
+Plug 'baskerville/vim-sxhkdrc'
 call plug#end()
