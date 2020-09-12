@@ -11,7 +11,7 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-surround'
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 " Tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -25,7 +25,7 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'christoomey/vim-sort-motion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 " Interface
 Plug 'bananushka/taboo.vim'
 Plug 'chrisbra/Colorizer'
@@ -39,7 +39,6 @@ Plug 'yuttie/comfortable-motion.vim'
 " Theme
 Plug 'dracula/vim',{'as':'dracula'}
 " System
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix bracey'}
 Plug 'christoomey/vim-system-copy'
 " Tools
 Plug 'tpope/vim-abolish' 

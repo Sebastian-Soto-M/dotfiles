@@ -6,23 +6,18 @@
 # Applications
 #################################################################
 
-#$TERMINAL
+#st
 super + Return
-    $TERMINAL
+    st
 
 # Launch Programs
 super + o ; {i,m,p,s}
-    {inkscape,$TERMINAL -e "ncmpcpp",$TERMINAL -e "pulsemixer",spotify}
+    {inkscape,st -e "ncmpcpp",st -e "pulsemixer",spotify}
 
 # Open Firefox
 super + o ; f ; {a,f,p,r,x} 
     firefox {archwiki.org,_,--private-window, reddit.com,\
-           wiki.archlinux.org/index.php/XDG_Base_Director/}
-
-#Xfce4-appfinder
-alt + F3
-    xfce4-appfinder
-
+           wiki.archlinux.org/index.php/XDG_Base_Directory}
 
 #################################################################
 # Terminal Applications & Commands
@@ -32,13 +27,17 @@ alt + F3
 super + Escape
     xkill
 
-#power
-ctrl + shift + c ; {f,r,s}
-	 systemctl {shutdown now,reboot,suspend}
-
 #dmenu
-super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+super + space
+    dmenu_run -c -l 20
+
+super + F1
+    dm_dotfiles
+
+#power manager
+super + shift + q
+   dm_power_manager
+
 
 #reload sxhkd:
 super + shift + s
@@ -46,7 +45,7 @@ super + shift + s
 
 #Htop
 ctrl + shift + Escape
-    $TERMINAL 'htop task manager' -e htop
+    st -e dash -c 'htop task manager' -e htop
 #################################################################
 # Configuration
 #################################################################
@@ -91,38 +90,6 @@ ctrl + shift + h
     amixer -D pulse set Master 1+ toggle
 
 #################################################################
-# ALT + ... KEYS
-#################################################################
-
-#Wallpaper next
-alt + n
-    variety -n
-
-#Wallpaper previous
-alt + p
-    variety -p
-
-#Wallpaper favorite
-alt + f
-    variety -f
-
-#Wallpaper previous
-alt + Left
-    variety -p
-
-#Wallpaper next
-alt + Right
-    variety -n
-
-#Wallpaper toggle-pause
-alt + Up
-    variety --toggle-pause
-
-#Wallpaper resume
-alt + Down
-    variety --resume
-
-#################################################################
 #VARIETY KEYS WITH PYWAL
 #################################################################
 
@@ -150,25 +117,11 @@ alt + shift + u
 #     SCREENSHOTS
 #################################################################
 
-#Scrot
-Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-
-#screeenshooter
-ctrl + Print
-     xfce4-screenshooter
-
-#Gnome-Screenshot
-ctrl + shift + Print
-     gnome-screenshot -i
+#replace with flameshot configs
 
 #################################################################
 #     FUNCTION KEYS
 #################################################################
-
-#xfce4-terminal dropdown
-F12
-    xfce4-terminal --drop-down
 
 #################################################################
 #     MULTIMEDIA KEYS

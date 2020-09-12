@@ -10,6 +10,7 @@
     "xml",
     "zsh"
   ],
+
   "emmet.includeLanguages": { "jinja.html": "html", "jinja": "html" },
   "emmet.showAbbreviationSuggestions": true,
   "emmet.showExpandedAbbreviation": "always",
@@ -36,24 +37,44 @@
   "html.filetypes": ["html", "jinja", "jinja.html"],
   "html.format.enable": false,
   "html.format.indentInnerHtml": true,
+
   "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
   "java.codeGeneration.useBlocks": true,
   "java.codeGeneration.generateComments": false,
   "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
   "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
-  "java.home": "/home/snsm/.config/asdf/shims/java",
+  "java.home": "/home/snsm/.local/share/sdkman/candidates/java/current",
+
   "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
     "godot": {
       "host": "127.0.0.1",
       "filetypes": ["gdscript"],
       "port": 6008
     }
   },
+
   "prettier.bracketSpacing": true,
   "prettier.disableLanguages": ["vue"],
   "prettier.printWidth": 80,
   "prettier.trailingComma": "all",
+
   "python.autoComplete.addBrackets": true,
   "python.autoComplete.extraPaths": [
     "${env:SPARK_HOME}/python",
@@ -69,5 +90,6 @@
     "jinja": ["html", "jinja.html"],
     "jinja.html": ["jinja", "html"]
   },
+
   "suggest.noselect": false
 }

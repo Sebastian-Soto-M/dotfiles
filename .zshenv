@@ -12,9 +12,7 @@ export HISTFILE="$XDG_DATA_HOME"/zsh/history
 
 export GOPATH="$XDG_DATA_HOME"/go
 export ASDF_DATA_DIR="$XDG_CONFIG_HOME"/asdf
-export TASKDATA="$XDG_DATA_HOME"/task
-export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
-export TIMEWARRIORDB="$TASKDATA"/timewarrior
+export SDKMAN_DIR="$XDG_DATA_HOME"/sdkman
 
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
@@ -22,12 +20,18 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+# run this command: echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts >> "$WGETRC"
 
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export TASKDATA="$XDG_DATA_HOME"/task
+export TIMEWARRIORDB="$TASKDATA"/timewarrior
+
+export SCRIPTS="$XDG_CONFIG_HOME/scripts"
+
+export PATH=$PATH":$XDG_CONFIG_HOME/scripts"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep dwm || startx "$XINITRC"
