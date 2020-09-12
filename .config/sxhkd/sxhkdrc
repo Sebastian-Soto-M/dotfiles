@@ -31,6 +31,11 @@ super + Escape
 super + space
     dmenu_run -c -l 20
 
+#edit dotfiles
+super + F2
+    dm_surf
+
+#edit dotfiles
 super + F1
     dm_dotfiles
 
