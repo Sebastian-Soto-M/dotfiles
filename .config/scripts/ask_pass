@@ -1,3 +1,2 @@
 #!/bin/sh
 dmenu -c -p "Sudo password" <&- && echo
-#echo $(dmenu -c -p "Sudo password" <&-)
