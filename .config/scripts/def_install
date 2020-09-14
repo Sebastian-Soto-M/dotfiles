@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#cd /tmp
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si
+
+# suckless downloads
+
+mkdir -p ~/.config
+cd ~/.config
+
+git clone git@github.com:Sebastian-Soto-M/dmenu.git
+cd dmenu && sudo make clean install && cd ..
+
+#git clone git@github.com:Sebastian-Soto-M/dwm.git
+#cd dwm && sudo make clean install && cd ..
+
+#git clone git@github.com:Sebastian-Soto-M/st.git
+#cd st && sudo make clean install && cd ..
+
+#git clone git@github.com:Sebastian-Soto-M/surf.git
+#cd surf && sudo make clean install && cd ..
+
+#git clone git@github.com:Sebastian-Soto-M/sxiv.git
+#cd sxiv && sudo make clean install && cd ..

@@ -31,18 +31,19 @@ super + Escape
 super + space
     dmenu_run -c -l 20
 
-#edit dotfiles
 super + F2
-    dm_surf
+    search_surf
+#bookmarks
+super + F3
+    bookmark_surf
 
 #edit dotfiles
 super + F1
-    dm_dotfiles
+    dotfiles_dm
 
 #power manager
 super + shift + q
-   dm_power_manager
-
+   pmanager_dm
 
 #reload sxhkd:
 super + shift + s
@@ -51,32 +52,13 @@ super + shift + s
 #Htop
 ctrl + shift + Escape
     st -e dash -c 'htop task manager' -e htop
-#################################################################
-# Configuration
-#################################################################
-
-#arcolinux-tweak-tool
-ctrl + alt + e
-    arcolinux-tweak-tool
-
-#Xfce4-settings-manager
-ctrl + alt + m
-     xfce4-settings-manager
-
-#Rofi theme selector
-ctrl + alt + r
-  rofi-theme-selector
-
-#Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
 
 #################################################################
 # Audio & Brightness
 #################################################################
 
 #Raises volume #XF86AudioRaiseVolume #Lowers volume #XF86AudioLowerVolume
-ctrl + shift + {k,j}
+ctrl + alt + {k,j}
     amixer set Master 10%{+,-}
 
 super + v ; {1-9,0}
@@ -93,53 +75,6 @@ super + b; {k,j}
 #XF86AudioMute
 ctrl + shift + h
     amixer -D pulse set Master 1+ toggle
-
-#################################################################
-#VARIETY KEYS WITH PYWAL
-#################################################################
-
-#Wallpaper next
-alt + shift + n
-    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper previous
-alt + shift + p
-    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper favorite
-alt + shift + f
-    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper update
-alt + shift + u
-    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#################################################################
-# CONTROL + SHIFT KEYS
-#################################################################
-
-#################################################################
-#     SCREENSHOTS
-#################################################################
-
-#replace with flameshot configs
-
-#################################################################
-#     FUNCTION KEYS
-#################################################################
-
-#################################################################
-#     MULTIMEDIA KEYS
-#################################################################
-
-#Playerctl works for Pragha, Spotify and others
-#Delete the line for playerctl if you want to use mpc
-#and replace it with the corresponding code
-#mpc works for e.g.ncmpcpp
-#mpc toggle
-#mpc next
-#mpc prev
-#mpc stop
 
 #PLAY
 XF86AudioPlay

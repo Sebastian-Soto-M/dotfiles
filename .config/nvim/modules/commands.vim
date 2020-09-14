@@ -49,3 +49,5 @@ augroup configs | au!
     au BufWritePost $XDG_CONFIG_HOME/nvim/coc-settings.json,$XDG_CONFIG_HOME/nvim/modules/*,$XDG_CONFIG_HOME/scripts/* :silent call ConfigAdd()
     au BufWritePost .zshenv,$XDG_CONFIG_HOME/picom/picom.conf,$XDG_CONFIG_HOME/sxhkd/sxhkdrc,$XDG_CONFIG_HOME/tmux/tmux.conf,$XDG_CONFIG_HOME/zsh/*.zsh* :silent call ConfigAdd()
 augroup END
+
+au FileType sh,bash,zsh vn <buffer> <silent> <leader>f :Tabularize /)\\|;;<CR>
