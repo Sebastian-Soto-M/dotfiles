@@ -84,7 +84,7 @@
   "python.jediEnabled": true,
   "python.terminal.executeInFileDir": true,
   "python.sortImports.path": "/home/snsm/.local/bin/isort",
-  "python.venvPath": "~/.virtualenvs",
+  "python.venvPath": "~/.config/virtualenvs",
   "snippets.extends": {
     "html": ["jinja", "jinja.html"],
     "jinja": ["html", "jinja.html"],

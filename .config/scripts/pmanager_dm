@@ -5,9 +5,9 @@ choices="Shutdown\nReboot\nSuspend\nLock"
 chosen=$(echo -e "$choices" | dmenu -n 3 -c -l 20)
 
 case "$chosen" in
-    "Shutdown" ) input_validation_dm  "Do you want to shut down?"  "shutdown now"                                        ;;
-    "Reboot"   ) input_validation_dm  "Do you want to reboot?"     "reboot"                                              ;;
-    "Suspend"  ) input_dm      "sudo -A $(systemctl suspend)"                                                     ;;
-    "Lock"     ) input_validation_dm  "Do you want to lock?"       "qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock" ;;
-    *          )                                                                                               ;;
+    "Shutdown" ) input_validation_dm  "Do you want to shut down?"  "shutdown now" ;;
+    "Reboot"   ) input_validation_dm  "Do you want to reboot?"     "reboot"       ;;
+    "Suspend"  ) input_dm      "sudo -A $(systemctl suspend)"                     ;;
+    "Lock"     ) input_validation_dm  "Do you want to lock?"       ""             ;;
+    *          )                                                                  ;;
 esac

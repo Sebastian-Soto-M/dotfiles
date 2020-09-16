@@ -1,13 +1,14 @@
 #!/bin/sh
 configs="ncspot\npicom\npolybar\nsxhkd\ntaskrc\ntmux"
-folders="dmenu\nneovim\nscripts\nst\nsurf\nsxiv"
-scripts="ask_pass\nbookmark_surf\ndef_install\ndotfiles_dm\nedit menu\ninput_dm\ninput_validation_dm\npmanager_dm\nsearch_surf"
+folders="dmenu\ndwm\nneovim\nscripts\nst\nsurf\nsxiv"
+scripts="ask_pass\nbookmark_surf\ndef_install\ndotfiles_dm\nedit menu\ninput_dm\ninput_validation_dm\npmanager_dm\nsearch_surf\nstartdwm"
 shell="alias\np10k\nzshrc\nzshenv"
 xorg="xinitrc\nxresources"
 
 case "$(echo -e "${folders}\n${scripts}\n${configs}\n${shell}\n${xorg}" | dmenu -c -l 10)" in
     # terminal dirs
     dmenu               ) st -d "$XDG_CONFIG_HOME/dmenu"                           ;;
+    dwm                 ) st -d "$XDG_CONFIG_HOME/dwm"                             ;;
     neovim              ) st -d "$XDG_CONFIG_HOME/nvim"                            ;;
     scripts             ) st -d "$XDG_CONFIG_HOME/scripts"                         ;;
     st                  ) st -d "$XDG_CONFIG_HOME/st"                              ;;
@@ -34,10 +35,11 @@ case "$(echo -e "${folders}\n${scripts}\n${configs}\n${shell}\n${xorg}" | dmenu 
     input_validation_dm ) st -e dash -c "nvim $SCRIPTS/input_validation_dm"        ;;
     pmanager_dm         ) st -e dash -c "nvim $SCRIPTS/pmanager_dm"                ;;
     search_surf         ) st -e dash -c "nvim $SCRIPTS/search_surf"                ;;
+    startdwm            ) st -e dash -c "nvim $SCRIPTS/startdwm"                   ;;
     "edit menu"         ) st -e dash -c "nvim $SCRIPTS/dotfiles_dm"                ;;
 
     # xorg
-    xinit               ) st -e dash -c "nvim $XINITRC"                            ;;
+    xinitrc             ) st -e dash -c "nvim $XINITRC"                            ;;
     xresources          ) st -e dash -c "nvim $HOME/.Xresources"                   ;;
 
     # default

@@ -1,0 +1,92 @@
+# Basic options
+# default_keybindings = false
+use_nerdfont = true
+volnorm = true
+volnorm_pregain = 0.0
+
+[saved_state]
+shuffle = true
+
+[keybindings]
+##################
+# Fast forward / rewind
+##################
+"b" = "seek -1000"
+"f" = "seek +1000"
+"Shift+b" = "seek -10000"
+"Shift+f" = "seek +10000"
+
+##################
+# Play / pause
+##################
+"p" = "playpause"
+"Enter" = "play"
+
+##################
+# Track manipulation
+##################
+"Shift+H" = "previous"
+"Shift+L" = "next"
+"r" = "repeat"
+"z" = "shuffle"
+"Shift+d" = "delete"
+"Shift+s" = "save"
+
+# Open context menu
+"o" = "open current"
+"Shift+o" = "open selected"
+"A" = "goto artist"
+"a" = "goto album"
+
+##################
+# Queue
+##################
+# Add to queue
+" " = "queue"
+# Move selected song up/down in the queue
+"Shift+Down" = "shift down 1"
+"Shift+Up" = "shift up 1"
+"Shift+c" = "clear"
+
+######################################
+# Sound
+######################################
+"=" = "volup"
+"-" = "voldown"
+
+######################################
+# Movements
+######################################
+"F1" = "focus queue"
+"/" = "focus search"
+"F2" = "focus library"
+# Go to the playing track
+"." = "move playing"
+# Navigation
+"G" = "move bottom"
+"g" = "move top"
+"Ctrl+d" = "move down 5"
+"Ctrl+u" = "move up 5"
+"h" = "move left 1"
+"j" = "move down 1"
+"k" = "move up 1"
+"l" = "move right 1"
+"q" = "back"
+
+[theme]
+background = "black"
+primary = "light white"
+secondary = "light green"
+title = "blue"
+playing = "light magenta"
+playing_selected = "black"
+playing_bg = "light black"
+highlight = "light black"
+highlight_bg = "blue"
+error = "light white"
+error_bg = "red"
+statusbar = "light magenta"
+statusbar_progress = "light cyan"
+statusbar_bg = "black"
+cmdline = "light cyan"
+cmdline_bg = "black"

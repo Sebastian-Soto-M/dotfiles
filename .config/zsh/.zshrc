@@ -30,6 +30,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # TMUX configuration
 ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME"/tmux/tmux.conf
 ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_UNICODE=true
 # ALIAS_FINDER
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 
@@ -37,6 +38,7 @@ plugins=(
     alias-finder
     asdf
     colored-man-pages
+    fast-syntax-highlighting
     fzf
     git
     gitignore
@@ -95,10 +97,5 @@ export EDITOR="nvim"
 export SUDO_ASKPASS="$SCRIPTS/ask_pass"
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# fish like syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

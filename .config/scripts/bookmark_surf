@@ -10,4 +10,4 @@ case "$chosen" in
     Suckless ) w="https://www.suckless.org"                         ;;
     YouTube  ) w="https://www.youtube.com"                          ;;
 esac
-[ ! -z "$w" ]  && surf $w
+[ ! -z "$w" ]  && firefox --new-tab $w

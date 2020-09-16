@@ -29,8 +29,6 @@ alias gtssm="cd ~/code/python/web/websites/ssm/"
 
 #shortcuts
 alias de="deactivate"
-alias ktmx="tmux kill-server"
-alias nstmux="tmux new -s $1"
 alias pf="pip freeze"
 alias te="task $1 edit"
 alias xclip="xclip -selection clipboard"

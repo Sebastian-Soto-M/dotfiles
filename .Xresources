@@ -42,12 +42,13 @@ dmenu.selforeground: #44475A
 dmenu.adjbackground: #44475A
 dmenu.adjforeground: #BFBFBF
 
-!dwm.normbordercolor: #6272A4
-!dwm.normbgcolor: #282A36
-!dwm.normfgcolor: #BFBFBF
-!dwm.selbordercolor: #9AEDFE
-!dwm.selbgcolor: #BD93F9
-!dwm.selfgcolor: #F8F8F2
+dwm.normbordercolor: #44475A
+dwm.normbgcolor: #282A36
+dwm.normfgcolor: #44475A
+dwm.selbordercolor: #FF92D0
+dwm.selbgcolor: #44475A
+dwm.selfgcolor: #CAA9FA
+dwm.borderpx: 2
 
 !instantwm.font: FiraCode:size=11
 
