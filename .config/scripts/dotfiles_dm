@@ -1,7 +1,7 @@
 #!/bin/sh
 configs="ncspot\npicom\npolybar\nsxhkd\ntaskrc\ntmux"
 folders="dmenu\ndwm\nneovim\nscripts\nst\nsurf\nsxiv"
-scripts="ask_pass\nbookmark_surf\ndef_install\ndotfiles_dm\nedit menu\ninput_dm\ninput_validation_dm\npmanager_dm\nsearch_surf\nstartdwm"
+scripts="ask_pass\nautostart_dwm\nbookmark_surf\ndef_install\ndotfiles_dm\nedit menu\ninput_dm\ninput_validation_dm\npmanager_dm\nsearch_surf\nstartdwm"
 shell="alias\np10k\nzshrc\nzshenv"
 xorg="xinitrc\nxresources"
 
@@ -9,6 +9,7 @@ case "$(echo -e "${folders}\n${scripts}\n${configs}\n${shell}\n${xorg}" | dmenu 
     # terminal dirs
     dmenu               ) st -d "$XDG_CONFIG_HOME/dmenu"                           ;;
     dwm                 ) st -d "$XDG_CONFIG_HOME/dwm"                             ;;
+    autostart_dwm       ) st -e dash -c "nvim $XDG_DATA_HOME/dwm/autostart.sh"     ;;
     neovim              ) st -d "$XDG_CONFIG_HOME/nvim"                            ;;
     scripts             ) st -d "$XDG_CONFIG_HOME/scripts"                         ;;
     st                  ) st -d "$XDG_CONFIG_HOME/st"                              ;;

@@ -117,3 +117,4 @@ flaskinit() {
 bt() {
     if [[ $1 == *.md ]]; then glow -p "$1"; else bat "$1"; fi
 }
+alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"

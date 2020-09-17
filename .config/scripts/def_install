@@ -1,38 +1,32 @@
 #!/bin/sh
 
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
 # zsh
 
-sudo pacman -S zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/svenXY/timewarrior ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/timewarrior
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#git clone https://github.com/svenXY/timewarrior ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/timewarrior
+#git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # suckless downloads
 
-mkdir -p ~/.config
-cd ~/.config
-
-git clone git@github.com:Sebastian-Soto-M/dmenu.git
-cd ~/.config/dmenu && sudo make clean install && cd ~/.config
-
-git clone git@github.com:Sebastian-Soto-M/dwm.git
-cd ~/.config/dwm && git checkout build && sudo make clean install && cd ~/.config
-
-git clone git@github.com:Sebastian-Soto-M/st.git
-cd ~/.config/st && sudo make clean install && cd ~/.config
-
-git clone git@github.com:Sebastian-Soto-M/surf.git
-cd ~/.config/surf && sudo make clean install && cd ~/.config
-
-git clone git@github.com:Sebastian-Soto-M/sxiv.git
-cd ~/.config/sxiv && sudo make clean install && cd ~/.config
-
-# Tmux tpm
+#mkdir -p ~/.config
+#cd ~/.config
+#
+git clone https://github.com/Sebastian-Soto-M/dmenu.git ~/.config/dmenu
+cd ~/.config/dmenu && sudo make clean install
+#
+git clone https://github.com/Sebastian-Soto-M/dwm.git ~/.config/dwm
+cd ~/.config/dwm && git checkout build && sudo make clean install
+#
+git clone https://github.com/Sebastian-Soto-M/st.git ~/.config/st
+cd ~/.config/st && sudo make clean install
+#
+git clone https://github.com/Sebastian-Soto-M/surf.git ~/.config/dwm
+cd ~/.config/surf && sudo make clean install
+#
+git clone https://github.com/Sebastian-Soto-M/sxiv.git ~/.config/sxiv
+cd ~/.config/sxiv && sudo make clean install
+#
+## Tmux tpm
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugin_manager/plugins/tpm
 
-# SDKMAN
+## SDKMAN

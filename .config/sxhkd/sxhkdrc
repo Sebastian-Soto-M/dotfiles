@@ -43,7 +43,7 @@ super + F1
 
 #power manager
 #super + shift + q
-#   pmanager_dm
+   pmanager_dm
 
 #reload sxhkd:
 super + shift + s

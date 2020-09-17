@@ -36,7 +36,7 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 
 plugins=(
     alias-finder
-    asdf
+    #asdf
     colored-man-pages
     fast-syntax-highlighting
     fzf
@@ -64,7 +64,7 @@ source $ZDOTDIR/alias.zsh
 export BAT_THEME="ansi-dark"
 export  BAT_STYLE="numbers,grid"
 # asdf
-. $ASDF_DATA_DIR/asdf.sh
+#. $ASDF_DATA_DIR/asdf.sh
 # FZF
 export FZF_BASE=/usr/bin/fzf
 export FD_OPTIONS="-pi --follow --exclude .git --exclude node_modules --exclude __pycache__"
