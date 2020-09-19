@@ -1,0 +1,17 @@
+instantwm.font             : FiraCode Nerd Font Mono:size=11
+
+instantwm.bgcolor          : bg
+instantwm.hovershadowcolor : c02
+instantwm.hoverbgcolor     : #7a88cf
+
+instantwm.minimize         : #7a88cf
+instantwm.darkminimize     : #5c669b
+
+instantwm.darkactivetag    : c05
+instantwm.activetag        : c13
+
+instantwm.hoverfocus       : #7a64a0
+instantwm.darkhoverfocus   : #6e5991
+
+instantwm.darkfocus        : #5c669b
+instantwm.focus            : #7a88cf

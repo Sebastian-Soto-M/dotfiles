@@ -1,7 +1,9 @@
 #git
 alias config="/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
-alias unv="/usr/bin/git --git-dir=$HOME/universidad/.unv/ --work-tree=$HOME/universidad"
+alias unv="/usr/bin/git --git-dir=$HOME/Documents/university/.unv/ \
+--work-tree=$HOME/Documents/university"
 # alias fm_ignore"git config core.filemode false"
+# config config --local status.showUntrackedFiles no
 
 #file edits
 edtr=nvim
@@ -9,7 +11,7 @@ edtr=nvim
 alias e10="$edtr $ZDOTDIR/.p10k.zsh"
 alias ealias="$edtr $ZDOTDIR/alias.zsh"
 alias ebsp="$edtr $XDG_CONFIG_HOME/bspwm/bspwmrc"
-alias eks="$edtr $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
+alias eks="$edtr $XDG_CONFIG_HOME/sxhkd/instant_sxhkdrc"
 alias envrc="cd ~/.config/nvim/"
 alias ep="$edtr ~/.config/picom/picom.conf"
 alias epl="$edtr $XDG_CONFIG_HOME/polybar/config"
@@ -76,7 +78,8 @@ alias trw="$trw"
 #tools
 alias wd="python ~/code/python/automation/automatic_file_manager/app.py"
 alias raid_calc="python -i ~/universidad/sistemas_operativos1/materia/src/raid_calc.py"
-alias dgd="dragon-drag-and-drop"
+alias dgd="xdragon" # "dragon-drag-and-drop"
+alias f="fd -Hi"
 
 #program alias
 alias vim=$edtr

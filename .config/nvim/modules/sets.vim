@@ -171,8 +171,7 @@ let g:formatters_java=['cstm_java']
 let g:user_emmet_leader_key=','
 let g:vim_markdown_folding_disabled=1
 
-let g:loaded_netrw=1
-let g:netrw_loaded_netrwPlugin=1
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 let g:goyo_width='80%'
 

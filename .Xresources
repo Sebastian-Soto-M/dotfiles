@@ -1,70 +1,26 @@
-! Dracula
+#include "/home/snsm/.config/X11/xresources/dracula_theme"
 
-*.background: #282A36
-*.foreground: #F8F8F2
+*.background : bg
+*.foreground : fg
 
-! black
-*.color0:     #21222C
-*.color8:     #44475A
+*.color0     : c00
+*.color8     : c08
+*.color1     : c01
+*.color9     : c09
+*.color2     : c02
+*.color10    : c10
+*.color3     : c03
+*.color11    : c11
+*.color4     : c04
+*.color12    : c12
+*.color5     : c05
+*.color13    : c13
+*.color6     : c06
+*.color14    : c14
+*.color7     : c07
+*.color15    : c15
 
-! red
-*.color1:     #FF5555
-*.color9:     #FF6E67
-
-! green
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-
-! yellow
-*.color3:     #FFB86C
-*.color11:    #F4F99D
-
-! blue
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-
-! magenta
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-
-! cyan
-*.color6:     #6272A4
-*.color14:    #9AEDFE
-
-! white
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
-
-dmenu.background: #282A36
-dmenu.foreground: #F8F8F2
-dmenu.selbackground: #BD93F9
-dmenu.selforeground: #44475A
-dmenu.adjbackground: #44475A
-dmenu.adjforeground: #BFBFBF
-
-dwm.normbordercolor: #44475A
-dwm.normbgcolor: #282A36
-dwm.normfgcolor: #44475A
-dwm.selbordercolor: #FF92D0
-dwm.selbgcolor: #44475A
-dwm.selfgcolor: #CAA9FA
-dwm.borderpx: 2
-
-!instantwm.font: FiraCode:size=11
-
-!instantwm.bgcolor: #212337
-!instantwm.hovershadowcolor: #5c669b
-!instantwm.hoverbgcolor: #7a88cf
-
-!instantwm.minimize: #7a88cf
-!instantwm.darkminimize: #5c669b
-
-!instantwm.darkactivetag: #FF79Ce
-!instantwm.activetag: #FF92Da
-
-!instantwm.hoverfocus: #7a64a0
-!instantwm.darkhoverfocus: #6e5991
-
-!instantwm.darkfocus: #5c669b
-!instantwm.focus: #7a88cf
-
+!#include "/home/snsm/.config/X11/xresources/dwm"
+#include "/home/snsm/.config/X11/xresources/dmenu"
+#include "/home/snsm/.config/X11/xresources/instantwm"
+#include "/home/snsm/.config/X11/xresources/sxiv"
