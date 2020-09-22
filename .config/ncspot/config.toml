@@ -74,7 +74,7 @@ shuffle = true
 "q" = "back"
 
 [theme]
-background = "black"
+#background = "black"
 primary = "light white"
 secondary = "light green"
 title = "blue"

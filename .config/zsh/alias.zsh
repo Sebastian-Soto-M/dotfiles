@@ -39,7 +39,7 @@ alias o="xdg-open $1 & disown"
 alias m="ncmpcpp"
 alias a="alias | fzf"
 alias xev="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
-
+alias lstdeps="expac -S '%r/%n: %D'"
 
 # exa
 alias exa='exa --icons'
@@ -79,12 +79,14 @@ alias trw="$trw"
 alias wd="python ~/code/python/automation/automatic_file_manager/app.py"
 alias raid_calc="python -i ~/universidad/sistemas_operativos1/materia/src/raid_calc.py"
 alias dgd="xdragon" # "dragon-drag-and-drop"
-alias f="fd -Hi"
 
 #program alias
 alias vim=$edtr
 alias feh="feh -ZF"
 
+alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"
+
+alias st="/home/snsm/.config/st/st"
 #functions
 ex () {
   if [ -f $1 ] ; then
@@ -120,4 +122,3 @@ flaskinit() {
 bt() {
     if [[ $1 == *.md ]]; then glow -p "$1"; else bat "$1"; fi
 }
-alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"

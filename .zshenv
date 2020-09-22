@@ -37,8 +37,6 @@ export SCRIPTS="$XDG_CONFIG_HOME/scripts"
 
 export PATH=$PATH":$XDG_CONFIG_HOME/scripts"
 
-export TERMINAL=$XDG_CONFIG_HOME/st/st
-
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep dwm || startx "$XINITRC"
 fi

@@ -1,0 +1,7 @@
+dwm.normbordercolor : c08
+dwm.normbgcolor     : bg
+dwm.normfgcolor     : c08
+dwm.selbordercolor  : c13
+dwm.selbgcolor      : c08
+dwm.selfgcolor      : c12
+dwm.borderpx        : 2
