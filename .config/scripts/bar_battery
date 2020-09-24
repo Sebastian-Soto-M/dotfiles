@@ -1,4 +1,0 @@
-#!/bin/sh
-BATT=$( acpi -b | sed 's/.*[charging|unknown], \([0-9]*\)%.*/\1/gi' )
-STATUS=$( acpi -b | sed 's/.*: \([a-zA-Z]*\),.*/\1/gi' )
-echo "${BATT} ${STATUS}"

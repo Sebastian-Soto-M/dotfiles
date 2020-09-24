@@ -2,6 +2,14 @@
 # KEYBOARD BINDINGS FOR ANY TWM
 #################################################################
 
+# quit/restart bspwm
+super + shift + {Escape}
+	bspc {quit}
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
 #################################################################
 # Applications
 #################################################################

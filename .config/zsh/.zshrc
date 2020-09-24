@@ -91,10 +91,10 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 ######################
 #  END-FILE CONFIGS  #
 ######################
-export PATH="$HOME/.local/bin:$PATH"
 export GIT_PAGER="bat"
 export EDITOR="nvim"
-export SUDO_ASKPASS="$SCRIPTS/ask_pass"
+export TERMINAL="st"
+export SUDO_ASKPASS="$SCRIPTS/tools/ask_pass"
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

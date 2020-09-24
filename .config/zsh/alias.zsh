@@ -11,7 +11,7 @@ edtr=nvim
 alias e10="$edtr $ZDOTDIR/.p10k.zsh"
 alias ealias="$edtr $ZDOTDIR/alias.zsh"
 alias ebsp="$edtr $XDG_CONFIG_HOME/bspwm/bspwmrc"
-alias eks="$edtr $XDG_CONFIG_HOME/sxhkd/instant_sxhkdrc"
+alias eks="$edtr $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 alias envrc="cd ~/.config/nvim/"
 alias ep="$edtr ~/.config/picom/picom.conf"
 alias epl="$edtr $XDG_CONFIG_HOME/polybar/config"
@@ -78,7 +78,8 @@ alias trw="$trw"
 #tools
 alias wd="python ~/code/python/automation/automatic_file_manager/app.py"
 alias raid_calc="python -i ~/universidad/sistemas_operativos1/materia/src/raid_calc.py"
-alias dgd="xdragon" # "dragon-drag-and-drop"
+alias dgd="dragon-drag-and-drop" # "dragon-drag-and-drop"
+alias cat="bat"
 
 #program alias
 alias vim=$edtr

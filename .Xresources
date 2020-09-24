@@ -20,7 +20,7 @@
 *.color7     : c07
 *.color15    : c15
 
-!#include "/home/snsm/.config/X11/xresources/dwm"
+#include "/home/snsm/.config/X11/xresources/dwm"
 #include "/home/snsm/.config/X11/xresources/dmenu"
 !#include "/home/snsm/.config/X11/xresources/instantwm"
 #include "/home/snsm/.config/X11/xresources/sxiv"

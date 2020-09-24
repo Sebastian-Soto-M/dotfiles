@@ -5,7 +5,7 @@ volnorm = true
 volnorm_pregain = 0.0
 
 [saved_state]
-shuffle = true
+shuffle = false
 
 [keybindings]
 ##################

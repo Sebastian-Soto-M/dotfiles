@@ -34,9 +34,6 @@ fi
 # Display res
 xrandr -s 1600x900 &
 # wallpaper
-nitrogen --restore &
-# compositor
-# picom -b &
-sxhkd &
+~/.fehbg &
 exec startdwm
 

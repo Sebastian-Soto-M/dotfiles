@@ -35,7 +35,13 @@ export TIMEWARRIORDB="$TASKDATA"/timewarrior
 
 export SCRIPTS="$XDG_CONFIG_HOME/scripts"
 
-export PATH=$PATH":$XDG_CONFIG_HOME/scripts"
+export PATH="$HOME/.local/bin:$PATH"
+
+export PATH=$PATH":$SCRIPTS"
+export PATH=$PATH":$SCRIPTS/bar"
+export PATH=$PATH":$SCRIPTS/blocks"
+export PATH=$PATH":$SCRIPTS/dm"
+export PATH=$PATH":$SCRIPTS/tools"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep dwm || startx "$XINITRC"
