@@ -1,4 +1,5 @@
 #!/bin/sh
 dwmblocks &
-compton &
+~/.fehbg &
+picom --experimental-backends &
 sxhkd &

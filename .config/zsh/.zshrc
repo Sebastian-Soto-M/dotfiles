@@ -50,7 +50,7 @@ plugins=(
     taskwarrior
     timewarrior
     tmux
-    virtualenvwrapper
+    #virtualenvwrapper
     web-search
     zsh_reload
 ) 
@@ -84,16 +84,16 @@ export FZF_CTRl_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
 # virtualenvwrapper
-export WORKON_HOME=~/.config/virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
-source $HOME/.local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=~/.config/virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+#source $HOME/.local/bin/virtualenvwrapper.sh
 
 ######################
 #  END-FILE CONFIGS  #
 ######################
 export GIT_PAGER="bat"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERM="st-256color"
 export SUDO_ASKPASS="$SCRIPTS/tools/ask_pass"
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
