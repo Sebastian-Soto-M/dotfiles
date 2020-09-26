@@ -1,6 +1,9 @@
-function wrun() {
-    read -p "Do you wish to run the command from $1 [y/n]: " -n 1 -r
-    [[ $REPLY =~ ^[Yy]$ ]] && sh -c "$(curl -fsSL $1)"
+#!/bin/sh
+function web_script() {
+    read -p "Do you wish to run the command from $1 [y/n]: " RES
+    [[ $RES =~ ^[Yy]$ ]] && sh -c "$(curl -fsSL $1)"
 }
 
-wrun "https://gist.github.com/Sebastian-Soto-M/3e3b084cb133ed28e865f168a856ab3f/edit"
+web_script https://raw.githubusercontent.com/Sebastian-Soto-M/dotfiles/master/.config/scripts/installs/i_dotfiles
+web_script https://raw.githubusercontent.com/Sebastian-Soto-M/dotfiles/master/.config/scripts/installs/i_suckless
+web_script https://raw.githubusercontent.com/Sebastian-Soto-M/dotfiles/master/.config/scripts/installs/i_zsh
