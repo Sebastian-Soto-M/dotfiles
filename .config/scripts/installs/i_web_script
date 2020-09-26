@@ -1,0 +1,6 @@
+function wrun() {
+    read -p "Do you wish to run the command from $1 [y/n]: " -n 1 -r
+    [[ $REPLY =~ ^[Yy]$ ]] && sh -c "$(curl -fsSL $1)"
+}
+
+wrun "https://gist.github.com/Sebastian-Soto-M/3e3b084cb133ed28e865f168a856ab3f/edit"
