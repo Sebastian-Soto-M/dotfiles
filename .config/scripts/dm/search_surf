@@ -5,7 +5,7 @@ chosen=$(echo -e "$choices" | dmenu -p "Search Engines" -c -l 10)
 w=""
 case "$chosen" in
     ""       )                                                   ;;
-    ArchWiki ) w="https://wiki.archlinux.org/index.php?search="  ;;
+    ArchWiki ) w="https://wiki.archlinux.org/index.php/"         ;;
     GitHub   ) w="https://www.github.com/search?q="              ;;
     Google   ) w="https://www.google.com/search?q="              ;;
     YouTube  ) w="https://www.youtube.com/results?search_query=" ;;

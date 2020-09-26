@@ -42,6 +42,7 @@ export PATH=$PATH":$SCRIPTS/bar"
 export PATH=$PATH":$SCRIPTS/blocks"
 export PATH=$PATH":$SCRIPTS/dm"
 export PATH=$PATH":$SCRIPTS/tools"
+export PATH=$PATH":$XDG_CONFIG_HOME/blocks/scripts"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep dwm || startx "$XINITRC"

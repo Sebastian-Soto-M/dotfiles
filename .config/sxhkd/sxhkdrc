@@ -1,14 +1,6 @@
 #################################################################
-# KEYBOARD BINDINGS FOR ANY TWM
+# KEYBOARD BINDINGS FOR ANY WM
 #################################################################
-
-# quit/restart bspwm
-super + shift + {Escape}
-	bspc {quit}
-
-# close and kill
-super + {_,shift + }q
-	bspc node -{c,k}
 
 #################################################################
 # Applications
@@ -35,10 +27,6 @@ super + o ; f ; {a,f,p,r,x}
 super + Escape
     xkill
 
-#dmenu
-super + space
-    dmenu_run -c -l 20
-
 super + F2
     search_surf
 #bookmarks
@@ -59,7 +47,7 @@ super + shift + s
 
 #Htop
 ctrl + shift + Escape
-    st -e dash -c 'htop task manager' -e htop
+    $TERM -e dash -c 'htop task manager' -e htop
 
 #################################################################
 # Audio & Brightness
