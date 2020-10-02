@@ -12,42 +12,33 @@ super + Return
 
 # Launch Programs
 super + o ; {i,m,p,s}
-    {inkscape,st -e "ncmpcpp",st -e "pulsemixer",spotify}
+    {inkscape,st -e "ncspot",st -e "pulsemixer", spotify}
 
 # Open Firefox
 super + o ; f ; {a,f,p,r,x} 
     firefox {archwiki.org,_,--private-window, reddit.com,\
            wiki.archlinux.org/index.php/XDG_Base_Directory}
 
+super + f
+    firefox
+
 #################################################################
 # Terminal Applications & Commands
 #################################################################
+# custom menu
+super + a ; {b,d,h,q,m,n,r,s}
+    {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf}
+
+super + a ; {1}
+    {flameshot gui}
 
 #Xkill
 super + Escape
     xkill
 
-super + F2
-    search_surf
-#bookmarks
-super + F3
-    bookmark_surf
-
-#edit dotfiles
-super + F1
-    dotfiles_dm
-
-#power manager
-#super + shift + q
-   pmanager_dm
-
-#reload sxhkd:
-super + shift + s
-	pkill -USR1 -x sxhkd
-
-#Htop
-ctrl + shift + Escape
-    $TERM -e dash -c 'htop task manager' -e htop
+#get special character
+super + apostrophe
+    chars_dm
 
 #################################################################
 # Audio & Brightness
@@ -55,19 +46,28 @@ ctrl + shift + Escape
 
 #Raises volume #XF86AudioRaiseVolume #Lowers volume #XF86AudioLowerVolume
 ctrl + alt + {k,j}
-    amixer set Master 10%{+,-}
+    xbacklight -steps 1 -{inc,dec} 3;
 
-super + v ; {1-9,0}
-    val={1-9,10}; pcnt=$(echo $val'*10' | bc); amixer set Master $pcnt%
+ctrl + shift + b ; {3-9,0}
+    val={1-9,10}; \
+    pcnt=$(echo $val'*10' | bc); \
+    xbacklight -steps 1 -set $pcnt; \
+    notify-send -u low "Brightness" "Set to ${pcnt}"
+
+ctrl + shift + a ; {1-9,0}
+    val={1-9,10}; \
+    pcnt=$(echo $val'*10' | bc); \
+    amixer set Master $pcnt%; \
+    notify-send -u low "Volume" "Set to ${pcnt}"
 
 #Brightness up XF86MonBrightnessUp #Brightness down XF86MonBrightnessDown
-super + b ; {1-9,0}
-    val={1-9,10}; pcnt=$(echo $val'*10' | bc); xbacklight -steps 1 -set $pcnt
+# Continuar aquí
 
-super + b; {k,j}
-    xbacklight -steps 1 -{inc,dec} 3
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    amixer set Master 10%{+,-} && pkill -RTMIN+10 dwmblocks
 
 #Mute
 #XF86AudioMute
 ctrl + shift + h
-    amixer -D pulse set Master 1+ toggle
+    amixer -D pulse set Master 1+ toggle; \
+    notify-send -u low "Volume" "Toggle mute"
