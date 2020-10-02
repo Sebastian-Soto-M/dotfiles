@@ -40,6 +40,7 @@ alias m="ncmpcpp"
 alias a="alias | fzf"
 alias xev="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
 alias lstdeps="expac -S '%r/%n: %D'"
+alias pc="(rm *.orig ; rm *.rej; rm config.h) && sudo make clean install"
 
 # exa
 alias exa='exa --icons'
