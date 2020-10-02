@@ -62,8 +62,8 @@ alias.@=context
 
 context.custom=project:customization or project:automation
 context.me=project:home or project:personal
-context.spd=project:shopped
 context.study=+quiz or +exam or +presentation
 context.unv=project:unv or +quiz or +exam or +presentation
 
 default.command=dtl
+context=unv

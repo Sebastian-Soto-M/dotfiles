@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/snsm/.config/wallpapers/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg' 
+feh --no-fehbg --bg-fill '/home/snsm/.config/wallpapers/dracula/mountains-1412683.jpg' 
