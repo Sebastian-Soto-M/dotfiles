@@ -1,0 +1,23 @@
+#!/bin/sh
+opts="a\nc\ne\ni\nn\no\nu\nA\nC\nE\nI\nN\nO\nU"
+case "$(echo -e "${opts}" | dmenu -c -l 10)" in
+    "" )                         ;;
+    A  ) w="À\nÁ\nÂ\nÃ\nÄ\nÅ\nÆ" ;;
+    C  ) w="Ç"                   ;;
+    E  ) w="È\nÉ\nÊ\nË"          ;;
+    I  ) w="Ì\nÍ\nÎ\nÏ"          ;;
+    N  ) w="Ñ"                   ;;
+    O  ) w="Ò\nÓ\nÔ\nÕ\nÖ"       ;;
+    U  ) w="Ù\nÚ\nÛ\nÜ"          ;;
+    a  ) w="à\ná\nâ\nã\nä\nå\næ" ;;
+    c  ) w="ç"                   ;;
+    e  ) w="è\né\nê\në"          ;;
+    i  ) w="ì\ní\nî\nï"          ;;
+    n  ) w="ñ"                   ;;
+    o  ) w="ò\nó\nô\nõ\nö"       ;;
+    u  ) w="ù\nú\nû\nü"          ;;
+esac
+
+if [ ! -z "$w" ]; then
+    echo -e "${w}" | dmenu -c -l 10 | xclip -selection clipboard
+fi

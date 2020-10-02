@@ -1,0 +1,2 @@
+#!/bin/sh
+echo -n $(echo -e "$1" | dmenu -p $2 -c -l 10) # options, prompt, line count

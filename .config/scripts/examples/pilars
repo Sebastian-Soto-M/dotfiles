@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+import subprocess
+
+
+class Rect():
+    def __init__(self, x: int, y: int, width: int, height: int):
+        self.x = x
+        self.y = y
+        self.w = width
+        self.h = height
+        self.__offset = 0
+        self.__color = ""
+
+    @property
+    def dimensions(self):
+        return f"^r{int(self.x)},{int(self.y)},{self.w},{int(self.h)}^"
+
+    @property
+    def color(self):
+        return f"^c{self.__color}^" if self.__color else ""
+
+    @color.setter
+    def color(self, color: str):
+        self.__color = f"#{color}"
+
+    @property
+    def offset(self):
+        return f"^f{self.__offset}^" if self.__offset else ""
+
+    @offset.setter
+    def offset(self, offset: str):
+        self.__offset = offset
+
+    def draw(self) -> str:
+        return f"{self.color}{self.dimensions}{self.offset}^d^"
+
+
+def xsetroot(info: str):
+    subprocess.run(["xsetroot", "-name", info])
+
+
+class Bar(Rect):
+    def __init__(self, x, w, h, c, o):
+        Rect.__init__(self, x, 20-h, w, h)
+        self.color = c
+        self.offset = o
+
+
+# The bar height is 20
+# for items to be centered, y must be: y=20-h
+if __name__ == "__main__":
+    fg = ""
+    green = "50FA7B"
+    orange = "FFB86C"
+    red = "FF6E67"
+    yellow = "F4F99D"
+    cyan = "9AEDFE"
+    max_height = 18
+    width = 30
+
+    b2 = Bar(0, 4, 18, green, 0)
+    # b3 = Bar(6, 4, 3, cyan, 10)
+# The bar height is 20
+    print(b2.draw())

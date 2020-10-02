@@ -3,13 +3,13 @@ configs="ncspot\npicom\npolybar\nsxhkd\ntaskrc\ntmux"
 folders="blocks\ndmenu\ndwm\nneovim\nscripts\nst\nsurf\nsxiv"
 scripts="ask_pass\nautostart_dwm\nbookmark_surf\ndef_install\nedit menu\ninput_dm\ninput_validation_dm\npmanager_dm\nsearch_surf\nstartdwm"
 shell="alias\np10k\nzshrc\nzshenv"
-xorg="xinitrc\nxresources\nnxres_dwm\nxres_theme"
+xorg="xinitrc\nxresources\nxres_dmenu\nnxres_dwm\nxres_theme"
 
 case "$(echo -e "${folders}\n${scripts}\n${configs}\n${shell}\n${xorg}" | dmenu -c -l 10)" in
 
     # terminal dirs
     autostart_dwm       ) st -e dash -c "nvim $XDG_DATA_HOME/dwm/autostart.sh"               ;;
-    blocks              ) st -d "$XDG_CONFIG_HOME/blocks"                                    ;;
+    blocks              ) st -d "$XDG_CONFIG_HOME/dwmblocks"                                 ;;
     dmenu               ) st -d "$XDG_CONFIG_HOME/dmenu"                                     ;;
     dwm                 ) st -d "$XDG_CONFIG_HOME/dwm"                                       ;;
     neovim              ) st -d "$XDG_CONFIG_HOME/nvim"                                      ;;
@@ -46,6 +46,7 @@ case "$(echo -e "${folders}\n${scripts}\n${configs}\n${shell}\n${xorg}" | dmenu 
     xinitrc             ) st -e dash -c "nvim $XINITRC"                                      ;;
     xresources          ) st -e dash -c "nvim $HOME/.Xresources"                             ;;
     xres_dwm            ) st -e dash -c "nvim $XDG_CONFIG_HOME/X11/xresources/dwm"           ;;
+    xres_dmenu          ) st -e dash -c "nvim $XDG_CONFIG_HOME/X11/xresources/dmenu"         ;;
     xres_theme          ) st -e dash -c "nvim $XDG_CONFIG_HOME/X11/xresources/dracula_theme" ;;
 
     # default

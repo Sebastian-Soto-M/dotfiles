@@ -1,0 +1,131 @@
+#!/usr/bin/env python3
+import subprocess
+
+
+class Rect():
+    def __init__(self, x: int, y: int, width: int, height: int):
+        self.x = x
+        self.y = y
+        self.w = width
+        self.h = height
+        self.__offset = 0
+        self.__color = ""
+
+    @property
+    def dimensions(self):
+        return f"^r{int(self.x)},{int(self.y)},{self.w},{int(self.h)}^"
+
+    @property
+    def color(self):
+        return f"^c{self.__color}^" if self.__color else ""
+
+    @color.setter
+    def color(self, color: str):
+        self.__color = f"#{color}"
+
+    @property
+    def offset(self):
+        return f"^f{self.__offset}^" if self.__offset else ""
+
+    @offset.setter
+    def offset(self, offset: str):
+        self.__offset = offset
+
+    def draw(self) -> str:
+        return f"{self.color}{self.dimensions}{self.offset}"
+
+
+class Bar():
+    def __init__(self, width, height, fill, color):
+        left_margin = 10
+        self.c = color
+        self.f = fill
+        self.h = height
+        self.o = width+left_margin
+        self.w = width
+
+    def __draw_background(self):
+        bg = Rect(self.w/6, max_height-self.h/2, self.w+6, self.h)
+        bg.color = "44475A"
+        return bg.draw()
+
+    def __draw_fill(self):
+        hf = self.h-4
+        fill = Rect(self.h-2, max_height-hf/2, self.f, hf)
+        fill.color = self.c
+        fill.offset = self.o
+        return fill.draw()
+
+    def draw(self):
+        return f"{self.__draw_background()}{self.__draw_fill()}^d^"
+
+
+class Battery(Bar):
+    def __init__(self, width, height, c_charging, c_discharging, c_critical):
+        power = int(subprocess.run(
+            ['cat', '/sys/class/power_supply/BAT0/capacity'],
+            stdout=subprocess.PIPE).stdout.decode('utf-8'))
+        color = c_charging
+        if int(subprocess.run(['cat', '/sys/class/power_supply/AC0/online'], stdout=subprocess.PIPE).stdout.decode('utf-8')) == 0:
+            color = c_discharging
+            if power < 30:
+                color = c_critical
+        power = width*power/100
+        Bar.__init__(self, width, height, power, color)
+
+
+class Brightness(Bar):
+    def __init__(self, width, height):
+        color = yellow
+        light = int(subprocess.run(
+            ['xbacklight', '-get'],
+            stdout=subprocess.PIPE).stdout.decode('utf-8').split('.')[0])
+        light = width*light/100
+        Bar.__init__(self, width, height, light, color)
+
+
+class Volume(Bar):
+    def __init__(self, width, height):
+        color = cyan
+        vol = int(subprocess.run(
+            ['pamixer', '--get-volume'],
+            stdout=subprocess.PIPE).stdout.decode('utf-8'))
+        vol = width*vol/100
+        Bar.__init__(self, width, height, vol, color)
+
+
+def xsetroot(info: str):
+    subprocess.run(["xsetroot", "-name", info])
+
+
+def draw_components():
+    battery = Battery(width, max_height, green, orange, red)
+    battery.o = 50
+
+    brightness = Brightness(width, max_height)
+
+    volume = Volume(width, max_height)
+
+    proc = subprocess.Popen(
+        ["free --mebi | sed -n '2{{p;q}}' | awk '{{printf (\" %2.2f(GiB)\\n\"), ($3/1024)}}'"], stdout=subprocess.PIPE, shell=True)
+    memory = proc.communicate()[0].decode('utf-8').rstrip()
+
+    datetime = subprocess.run(
+        ['date', '+ %^b %d ﲊ %I:%M %^p'],
+        stdout=subprocess.PIPE
+    ).stdout.decode('utf-8').rstrip()
+
+    return volume.draw() + brightness.draw() + battery.draw() + '|' + memory + \
+        '|' + datetime
+
+
+if __name__ == "__main__":
+    fg = ""
+    green = "50FA7B"
+    orange = "FFB86C"
+    red = "FF6E67"
+    yellow = "F4F99D"
+    cyan = "9AEDFE"
+    max_height = 10
+    width = 30
+    print(draw_components())

@@ -1,0 +1,18 @@
+#!/bin/sh
+opts="all\npicom\nautostart\nsxhkd\ndunst"
+
+restart(){
+    pkill -USR1 -x $1;
+    notify-send -u low "Restart executed" $1
+}
+
+case "$(echo -e "${opts}" | dmenu -c -l 10)" in
+    all       ) restart "picom" & restart "dunst" & pkill autostart.sh; ~/.local/share/dwm/autostart.sh & restart "sxhkd" ;;
+    autostart ) pkill autostart.sh; ~/.local/share/dwm/autostart.sh                                                       ;;
+    dunst     ) restart "dunst"                                                                                           ;;
+    picom     ) restart "picom"                                                                                           ;;
+    sxhkd     ) restart "sxhkd"                                                                                           ;;
+
+    *         )                                                                                                           ;;
+esac
+

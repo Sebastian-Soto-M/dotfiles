@@ -1,13 +1,13 @@
 #!/bin/sh
 
-choices="Shutdown\nReboot\nSuspend\nLock"
+choices="Shutdown\nReboot\nSuspend\nHibernate"
 
 chosen=$(echo -e "$choices" | dmenu -n 3 -c -l 20)
 
 case "$chosen" in
-    "Shutdown" ) input_validation_dm  "Do you want to shut down?"  "shutdown now" ;;
-    "Reboot"   ) input_validation_dm  "Do you want to reboot?"     "reboot"       ;;
-    "Suspend"  ) input_dm      "sudo -A $(systemctl suspend)"                     ;;
-    "Lock"     ) input_validation_dm  "Do you want to lock?"       ""             ;;
-    *          )                                                                  ;;
+    "Shutdown"  ) input_validation_dm  "Do you want to shut down?"  "shutdown now"           ;;
+    "Reboot"    ) input_validation_dm  "Do you want to reboot?"     "reboot"                 ;;
+    "Suspend"   ) input_validation_dm  "Do you want to suspend?"    "systemctl suspend"      ;;
+    "Hibernate" ) input_validation_dm  "Do you want to hibernate?"  "systemctl hybrid-sleep" ;;
+    *           )                                                                            ;;
 esac

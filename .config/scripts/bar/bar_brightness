@@ -1,0 +1,8 @@
+#!/bin/sh
+IFS='.' read -r -a val <<< "$(xbacklight -get)"
+if   [ $val -le 15 ]  ; then brightness=" $val" ;
+elif [ $val -le 65 ]  ; then brightness=" $val" ;
+elif [ $val -le 100 ] ; then brightness=" $val" ;
+fi
+echo $brightness
+
