@@ -1,11 +1,3 @@
-#################################################################
-# KEYBOARD BINDINGS FOR ANY WM
-#################################################################
-
-#################################################################
-# Applications
-#################################################################
-
 #st
 super + Return
     st
@@ -15,16 +7,10 @@ super + o ; {i,m,p,s}
     {inkscape,st -e "ncspot",st -e "pulsemixer", spotify}
 
 # Open Firefox
-super + o ; f ; {a,f,p,r,x} 
+super + f ; {a,f,p,r,x} 
     firefox {archwiki.org,_,--private-window, reddit.com,\
            wiki.archlinux.org/index.php/XDG_Base_Directory}
 
-super + f
-    firefox
-
-#################################################################
-# Terminal Applications & Commands
-#################################################################
 # custom menu
 super + a ; {b,d,h,q,m,n,r,s}
     {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf}
@@ -32,36 +18,38 @@ super + a ; {b,d,h,q,m,n,r,s}
 super + a ; {1}
     {flameshot gui}
 
-#Xkill
+ctrl + super + space
+    xfce4-appfinder
+
 super + Escape
     xkill
 
-#get special character
 super + apostrophe
     chars_dm
 
-#################################################################
-# Audio & Brightness
-#################################################################
+Menu
+    xkblayout-state set +1;                                     \
+    notify-send -u low "Keyboard layout"                        \
+    "$(xkblayout-state print 'Set to: %n')"                     \
+    --icon=/usr/share/icons/Papirus-Dark/16x16/actions/flag.svg
 
 #Raises volume #XF86AudioRaiseVolume #Lowers volume #XF86AudioLowerVolume
 ctrl + alt + {k,j}
     xbacklight -steps 1 -{inc,dec} 3;
 
-ctrl + shift + b ; {3-9,0}
-    val={1-9,10}; \
-    pcnt=$(echo $val'*10' | bc); \
-    xbacklight -steps 1 -set $pcnt; \
-    notify-send -u low "Brightness" "Set to ${pcnt}"
+ctrl + shift + b ; {1-9,0}
+    val={1-9,10}; pcnt=$(echo $val'*10' | bc);       \
+    xbacklight -steps 1 -set $pcnt;                  \
+    notify-send -u low "Brightness" "Set to ${pcnt}" \
+    --icon=/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg
 
 ctrl + shift + a ; {1-9,0}
-    val={1-9,10}; \
-    pcnt=$(echo $val'*10' | bc); \
-    amixer set Master $pcnt%; \
-    notify-send -u low "Volume" "Set to ${pcnt}"
+    val={1-9,10}; pcnt=$(echo $val'*10' | bc);       \
+    amixer set Master $pcnt%;                        \
+    notify-send -u low "Volume" "Set to ${pcnt}"     \
+    --icon=/usr/share/icons/Papirus-Dark/16x16/actions/speaker.svg
 
 #Brightness up XF86MonBrightnessUp #Brightness down XF86MonBrightnessDown
-# Continuar aquí
 
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
     amixer set Master 10%{+,-} && pkill -RTMIN+10 dwmblocks

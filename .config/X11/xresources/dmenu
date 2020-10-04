@@ -1,6 +1,6 @@
 dmenu.background    : bg
 dmenu.foreground    : fg
 dmenu.selbackground : c04
-dmenu.selforeground : c08
+dmenu.selforeground : bg
 dmenu.adjbackground : c08
 dmenu.adjforeground : c07

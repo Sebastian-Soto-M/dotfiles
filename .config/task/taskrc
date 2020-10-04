@@ -66,4 +66,3 @@ context.study=+quiz or +exam or +presentation
 context.unv=project:unv or +quiz or +exam or +presentation
 
 default.command=dtl
-context=unv
