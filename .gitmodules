@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:Sebastian-Soto-M/nvim.git
+[submodule ".config/scripts/afm"]
+	path = .config/scripts/afm
+	url = git@github.com:Sebastian-Soto-M/AutoFM.git
