@@ -39,12 +39,9 @@ export SCRIPTS="$XDG_CONFIG_HOME/scripts"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH=$PATH":$SCRIPTS"
-export PATH=$PATH":$SCRIPTS/bar"
-export PATH=$PATH":$SCRIPTS/blocks"
-export PATH=$PATH":$SCRIPTS/dm"
-export PATH=$PATH":$SCRIPTS/tools"
+export PATH=$PATH"$(find $SCRIPTS -type d -printf ':%p')"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep dwm || startx "$XINITRC"
 fi
+
