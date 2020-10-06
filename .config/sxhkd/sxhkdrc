@@ -15,8 +15,8 @@ super + f ; {a,f,p,r,x}
 super + a ; {b,d,h,q,m,n,r,s}
     {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf}
 
-super + a ; {1}
-    {flameshot gui}
+super + a ; {1,2,3}
+    {flameshot gui,wp_dm,chosen=$(fd . -e pdf "$HOME/downloads" | dmenu -c -l 20) && [ ! -z $chosen ] && zathura $chosen}
 
 ctrl + super + space
     xfce4-appfinder
