@@ -1,33 +1,31 @@
 #git
 alias config="/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
 alias unv="/usr/bin/git --git-dir=$HOME/Documents/university/.unv/ \
---work-tree=$HOME/Documents/university"
-# alias fm_ignore"git config core.filemode false"
-# config config --local status.showUntrackedFiles no
+    --work-tree=$HOME/Documents/university"
+    # alias fm_ignore"git config core.filemode false"
+    # config config --local status.showUntrackedFiles no
 
 #file edits
-edtr=nvim
+EDITOR=nvim
 
-alias e10="$edtr $ZDOTDIR/.p10k.zsh"
-alias ealias="$edtr $ZDOTDIR/alias.zsh"
-alias ebsp="$edtr $XDG_CONFIG_HOME/bspwm/bspwmrc"
-alias eks="$edtr $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
+alias e10="$EDITOR $ZDOTDIR/.p10k.zsh"
+alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
+alias ebsp="$EDITOR $XDG_CONFIG_HOME/bspwm/bspwmrc"
+alias eks="$EDITOR $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 alias envrc="cd ~/.config/nvim/"
-alias ep="$edtr ~/.config/picom/picom.conf"
-alias epl="$edtr $XDG_CONFIG_HOME/polybar/config"
-alias etmx="$edtr $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias etrc="$edtr $TASKRC"
-alias eze="$edtr $HOME/.zshenv"
-alias ezsh="$edtr $ZDOTDIR/.zshrc"
-alias eini="$edtr $XINITRC"
+alias ep="$EDITOR ~/.config/picom/picom.conf"
+alias epl="$EDITOR $XDG_CONFIG_HOME/polybar/config"
+alias etmx="$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias etrc="$EDITOR $TASKRC"
+alias eze="$EDITOR $HOME/.zshenv"
+alias ezsh="$EDITOR $ZDOTDIR/.zshrc"
+alias eini="$EDITOR $XINITRC"
+alias eau="$EDITOR $XDG_DATA_HOME/dwm/autostart.sh"
 
 #folders
 jva=~/code/java
 ptn=~/code/python
 unv=~/universidad
-
-alias gtcomp="cd $unv/diseño_construcción_de_componentes/"
-alias gtssm="cd ~/code/python/web/websites/ssm/"
 
 #shortcuts
 alias de="deactivate"
@@ -36,7 +34,7 @@ alias te="task $1 edit"
 alias xclip="xclip -selection clipboard"
 alias clpk="colorpicker --short --preview --one-shot"
 alias o="xdg-open $1 & disown"
-alias m="ncmpcpp"
+alias m="ncspot"
 alias a="alias | fzf"
 alias xev="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
 alias lstdeps="expac -S '%r/%n: %D'"
@@ -77,50 +75,59 @@ alias trdf="$trd | fzf"
 alias trw="$trw"
 
 #tools
-alias wd="python ~/code/python/automation/automatic_file_manager/app.py"
 alias raid_calc="python -i ~/universidad/sistemas_operativos1/materia/src/raid_calc.py"
 alias dgd="dragon-drag-and-drop" # "dragon-drag-and-drop"
-alias cat="bat"
-
+alias rm="rmtrash"
+alias mvndb="mvnt -Dmaven.surefire.debug"
 #program alias
-alias vim=$edtr
+alias vim=$EDITOR
 alias feh="feh -ZF"
-
 alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"
 
-alias st="/home/snsm/.config/st/st"
 #functions
 ex () {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
-spd=~/code/full_projects/shopped
-
-flaskinit() {
-    source .env;
-    workon $1;
-    flask run;
-}
-
-bt() {
+cat() {
     if [[ $1 == *.md ]]; then glow -p "$1"; else bat "$1"; fi
+}
+
+vs() {
+    files=()
+    names=()
+    while IFS= read -r -d $'\0'; do
+        files+=("$REPLY")
+    done < <(fd . -e json "$HOME/templates" -0)
+
+    for (( i = 1; i <= ${#files[@]}; i++ )); do
+        f=$files[$i]
+        names+=$(basename $f | cut -d"." -f1)
+    done
+    sel=$(printf "%s\n" "${names[@]}" | fzf +m --prompt="Get vimspector for:")
+    echo $sel
+    for (( i = 1; i <= ${#files[@]}; i++ )); do
+        f=$files[$i]
+        n=$(basename $f | cut -d"." -f1)
+        [[ $sel == $n ]] && cp $f ".$(echo $f | cut -d '.' -f2-)"
+    done
 }
