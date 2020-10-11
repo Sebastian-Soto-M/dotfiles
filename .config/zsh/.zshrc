@@ -39,18 +39,22 @@ plugins=(
     #asdf
     colored-man-pages
     fast-syntax-highlighting
+    fd
+    npm
+    node
     fzf
     git
     gitignore
     jenv
     man
     mvn
+    ng
     pip
     systemd
     taskwarrior
     timewarrior
     tmux
-    #virtualenvwrapper
+    virtualenvwrapper
     web-search
     zsh_reload
 ) 
@@ -73,9 +77,7 @@ export FZF_DEFAULT_OPTS="
 --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {} ) 2> /dev/null | head -300'
 --preview-window='right:hidden:wrap'
 --bind='f3:execute(bat --style=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept'
---color=dark
---color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
---color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+--color=16
 "
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
@@ -84,9 +86,9 @@ export FZF_CTRl_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
 # virtualenvwrapper
-#export WORKON_HOME=~/.config/virtualenvs
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
-#source $HOME/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.config/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 ######################
 #  END-FILE CONFIGS  #

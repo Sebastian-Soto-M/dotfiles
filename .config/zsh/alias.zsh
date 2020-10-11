@@ -12,7 +12,7 @@ alias e10="$EDITOR $ZDOTDIR/.p10k.zsh"
 alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
 alias ebsp="$EDITOR $XDG_CONFIG_HOME/bspwm/bspwmrc"
 alias eks="$EDITOR $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
-alias envrc="cd ~/.config/nvim/"
+alias envrc="pushd ~/.config/nvim/"
 alias ep="$EDITOR ~/.config/picom/picom.conf"
 alias epl="$EDITOR $XDG_CONFIG_HOME/polybar/config"
 alias etmx="$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf"
@@ -108,7 +108,7 @@ ex () {
     fi
 }
 
-cat() {
+bat() {
     if [[ $1 == *.md ]]; then glow -p "$1"; else bat "$1"; fi
 }
 
