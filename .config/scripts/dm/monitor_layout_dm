@@ -1,11 +1,13 @@
 #!/bin/sh
 
-choices="Left\nRight\nOnly Computer" 
-chosen=$(echo -e "$choices" | dmenu -p "Where's the monitor?" -n 1 -c -l 10)
-wp="$XDG_CONFIG_HOME/wallpapers/dracula/mountains-1412683.jpg"
+choices="Left\nRight\nOnly Computer"
+chosen=$(echo -e "$choices" | dmenu -p "Where's the monitor?" -c -l 10)
+wp="$XDG_CONFIG_HOME/wallpapers/MountN.png"
 case "$chosen" in
-    ""              )                              ;;
-    Left            ) left_mon feh --bg-fill $wp   ;;
-    Right           ) right_mon feh --bg-fill $wp  ;;
-    "Only Computer" ) single_mon feh --bg-fill $wp ;;
+"") ;;
+Left) left_mon ;;
+Right) right_mon ;;
+"Only Computer") single_mon ;;
 esac
+
+feh --bg-fill $wp
