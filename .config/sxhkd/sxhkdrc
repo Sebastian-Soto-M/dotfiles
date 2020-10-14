@@ -3,20 +3,21 @@ super + Return
     st
 
 # Launch Programs
-super + o ; {i,m,p,s}
-    {inkscape,st -e "ncspot",st -e "pulsemixer", spotify}
+super + o ; {i,m,s,z}
+    {inkscape,st -e "ncspot",spotify,chosen=$(fd . -e pdf "$HOME/downloads" | dmenu -c -l 20) && [ ! -z $chosen ] && zathura $chosen}}
 
 # Open Firefox
-super + f ; {a,f,p,r,x} 
-    firefox {archwiki.org,_,--private-window, reddit.com,\
-           wiki.archlinux.org/index.php/XDG_Base_Directory}
+super + f ; {a,f,i,n,p,r,x} 
+    firefox {archwiki.org,_,https://www.notion.so/Intuite-2688111756ae4c429637d46af4db8005,\
+        https://www.notion.so/Home-92ac0ad387494917b2422cf95bf84893,--private-window,\
+        reddit.com,wiki.archlinux.org/index.php/XDG_Base_Directory}
 
 # custom menu
-super + a ; {b,d,h,q,m,n,r,s}
-    {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf}
+super + a ; {b,d,h,q,m,n,r,s,w}
+    {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf,wp_dm}
 
 super + a ; {1,2,3}
-    {flameshot gui,wp_dm,chosen=$(fd . -e pdf "$HOME/downloads" | dmenu -c -l 20) && [ ! -z $chosen ] && zathura $chosen}
+    {flameshot gui,st -e dash -c nmtui,st -e "pulsemixer"}
 
 ctrl + super + space
     xfce4-appfinder
@@ -51,8 +52,10 @@ ctrl + shift + a ; {1-9,0}
 
 #Brightness up XF86MonBrightnessUp #Brightness down XF86MonBrightnessDown
 
-{XF86AudioRaiseVolume, XF86AudioLowerVolume}
-    amixer set Master 10%{+,-} && pkill -RTMIN+10 dwmblocks
+# runs when increase/decrease volume function keys are pressed
+XF86Audio{Raise,Lower}Volume
+    amixer set Master 10%{+,-}
+     
 
 #Mute
 #XF86AudioMute
