@@ -2,12 +2,9 @@
 
 choices="Left\nRight\nOnly Computer"
 chosen=$(echo -e "$choices" | dmenu -p "Where's the monitor?" -c -l 10)
-wp="$XDG_CONFIG_HOME/wallpapers/MountN.png"
 case "$chosen" in
 "") ;;
-Left) left_mon ;;
-Right) right_mon ;;
+Left) left_mon && wp_dm ;;
+Right) right_mon && wp_dm ;;
 "Only Computer") single_mon ;;
 esac
-
-feh --bg-fill $wp
