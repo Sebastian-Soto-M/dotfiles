@@ -16,8 +16,10 @@ export ASDF_DATA_DIR="$XDG_CONFIG_HOME"/asdf
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export SDKMAN_DIR="$XDG_DATA_HOME"/sdkman
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
@@ -37,11 +39,10 @@ export TIMEWARRIORDB="$TASKDATA"/timewarrior
 
 export SCRIPTS="$XDG_CONFIG_HOME/scripts"
 
-export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$XDG_DATA_HOME/npm/bin:$PATH"
+export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/dwm-status:$PATH"
 export PATH=$PATH"$(find $SCRIPTS -type d -printf ':%p')"
 
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep dwm || startx "$XINITRC"
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
 fi
-
