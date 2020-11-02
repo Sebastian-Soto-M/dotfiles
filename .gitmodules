@@ -4,3 +4,6 @@
 [submodule ".config/scripts/afm"]
 	path = .config/scripts/afm
 	url = git@github.com:Sebastian-Soto-M/AutoFM.git
+[submodule "documents/unv/p3/code/examen/backend"]
+	path = documents/unv/p3/code/examen/backend
+	url = git@github.com-dev:DevSebastianSoto/P3-Examen-backend.git
