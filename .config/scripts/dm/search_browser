@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choices="ArchWiki\nGitHub\nGoogle\nYouTube" 
+choices="ArchWiki\nGitHub\nGoogle\nYouTube"
 chosen=$(echo -e "$choices" | dmenu -p "Search Engines" -c -l 10)
 w=""
 case "$chosen" in
@@ -10,4 +10,4 @@ case "$chosen" in
     Google   ) w="https://www.google.com/search?q="              ;;
     YouTube  ) w="https://www.youtube.com/results?search_query=" ;;
 esac
-[ ! -z "$w" ] && surf "${w}$(input_dm $chosen)"
+[ ! -z "$w" ] && firefox "${w}$(input_dm $chosen)"

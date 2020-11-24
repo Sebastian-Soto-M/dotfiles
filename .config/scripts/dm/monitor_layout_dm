@@ -3,8 +3,8 @@
 choices="Left\nRight\nOnly Computer"
 chosen=$(echo -e "$choices" | dmenu -p "Where's the monitor?" -c -l 10)
 case "$chosen" in
-"") ;;
-Left) left_mon && wp_dm ;;
-Right) right_mon && wp_dm ;;
-"Only Computer") single_mon ;;
+    ""              )                    ;;
+    Left            ) left_mon && wp_dm  ;;
+    Right           ) right_mon && wp_dm ;;
+    "Only Computer" ) single_mon         ;;
 esac

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-choices="Dotfiles\nGitHub\nSuckless\nYouTube" 
-chosen=$(echo -e "$choices" | dmenu -p "surf bookmarks" -c -l 10)
+choices="Dotfiles\nGitHub\nSuckless\nYouTube"
+chosen=$(echo -e "$choices" | dmenu -p "Browser Bookmarks" -c -l 10)
 w=""
 case "$chosen" in
     ""       )                                                      ;;
@@ -10,4 +10,4 @@ case "$chosen" in
     Suckless ) w="https://www.suckless.org"                         ;;
     YouTube  ) w="https://www.youtube.com"                          ;;
 esac
-[ ! -z "$w" ]  && firefox --new-tab $w
+[ ! -z "$w" ] && firefox --new-tab $w

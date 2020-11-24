@@ -1,4 +1,5 @@
- #!/bin/sh
+#!/bin/sh
+
 case "$(echo -e "View notes\nNew note" | dmenu -c -l 10 )" in
     "View notes" ) st -e sh -c "ranger $HOME/documents/notes" ;;
     "New note"   ) fname=$(input_dm "File name:")  && st -e dash -c "nvim $HOME/documents/notes/$fname" ;;
