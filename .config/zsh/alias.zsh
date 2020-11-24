@@ -73,17 +73,24 @@ alias trdapp="$trd project:shopped +app"
 alias trdf="$trd | fzf"
 
 alias trw="$trw"
+alias t="taskwarrior-tui"
+
+#timewarrior
+alias tws='timew summary :ids'
 
 #tools
 alias raid_calc="python -i ~/universidad/sistemas_operativos1/materia/src/raid_calc.py"
 alias dgd="dragon-drag-and-drop" # "dragon-drag-and-drop"
 alias rm="rmtrash"
 alias mvndb="mvnt -Dmaven.surefire.debug"
+alias mvnweb="mvn -P-webpack"
 #program alias
+alias top=bpytop
 alias vim=$EDITOR
 alias feh="feh -ZF"
 alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"
-
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+alias glass="picom --experimental-backends &"
 #functions
 ex () {
     if [ -f $1 ] ; then
@@ -106,10 +113,6 @@ ex () {
     else
         echo "'$1' is not a valid file"
     fi
-}
-
-bat() {
-    if [[ $1 == *.md ]]; then glow -p "$1"; else bat "$1"; fi
 }
 
 vs() {

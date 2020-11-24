@@ -46,6 +46,7 @@ plugins=(
     git
     gitignore
     jenv
+    jhipster
     man
     mvn
     ng
