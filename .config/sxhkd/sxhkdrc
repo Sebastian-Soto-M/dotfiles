@@ -2,22 +2,28 @@
 super + Return
     st
 
+super + n
+    thunar
+
 # Launch Programs
-super + o ; {i,m,s,z}
-    {inkscape,st -e "ncspot",spotify,chosen=$(fd . -e pdf "$HOME/downloads" | dmenu -c -l 20) && [ ! -z $chosen ] && zathura $chosen}}
+super + o ; {i,m,s,v,z}
+    {inkscape,st -e "ncspot",spotify,\
+    chosen=$(fd . -e mp4 "$HOME/videos" | dmenu -c -l 20) && [ ! -z $chosen ] && mpv $chosen,\
+    chosen=$(fd . -e pdf "$HOME/downloads" | dmenu -c -l 20) && [ ! -z $chosen ] && zathura $chosen\
+    }
 
 # Open Firefox
-super + f ; {a,f,i,n,p,r,x} 
-    firefox {archwiki.org,_,https://www.notion.so/Intuite-2688111756ae4c429637d46af4db8005,\
+super + f ; {f,i,n,p,r,x}
+    firefox {_,https://www.notion.so/Intuite-2688111756ae4c429637d46af4db8005,\
         https://www.notion.so/Home-92ac0ad387494917b2422cf95bf84893,--private-window,\
-        reddit.com,wiki.archlinux.org/index.php/XDG_Base_Directory}
+            reddit.com,wiki.archlinux.org/index.php/XDG_Base_Directory}
 
 # custom menu
-super + a ; {b,d,h,q,m,n,r,s,w}
-    {bookmark_surf,dotfiles_dm,st -e dash -c htop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_surf,wp_dm}
+super + a ; {b,c,d,h,q,m,n,r,s,w}
+    {bookmark_browser,settings_dm,dotfiles_dm,st -e dash -c bpytop,pmanager_dm,monitor_layout_dm,new_note_dm,reload_dm,search_browser,wp_dm}
 
 super + a ; {1,2,3}
-    {flameshot gui,st -e dash -c nmtui,st -e "pulsemixer"}
+    {st -e dash -c nmtui,flameshot gui,st -e "pulsemixer"}
 
 ctrl + super + space
     xfce4-appfinder
@@ -55,7 +61,6 @@ ctrl + shift + a ; {1-9,0}
 # runs when increase/decrease volume function keys are pressed
 XF86Audio{Raise,Lower}Volume
     amixer set Master 10%{+,-}
-     
 
 #Mute
 #XF86AudioMute

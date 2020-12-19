@@ -66,7 +66,7 @@ source $ZDOTDIR/alias.zsh
 # TERMINAL TOOLS  CONFIGS #
 ###########################
 # bat
-export BAT_THEME="ansi-dark"
+export BAT_THEME="gruvbox"
 export  BAT_STYLE="numbers,grid"
 # asdf
 #. $ASDF_DATA_DIR/asdf.sh

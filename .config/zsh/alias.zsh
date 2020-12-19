@@ -73,7 +73,7 @@ alias trdapp="$trd project:shopped +app"
 alias trdf="$trd | fzf"
 
 alias trw="$trw"
-alias t="taskwarrior-tui"
+alias tv="taskwarrior-tui"
 
 #timewarrior
 alias tws='timew summary :ids'
@@ -91,6 +91,7 @@ alias feh="feh -ZF"
 alias xlog="nvim ~/.local/share/xorg/Xorg.0.log"
 alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 alias glass="picom --experimental-backends &"
+alias vims="$EDITOR -S vim-workspace"
 #functions
 ex () {
     if [ -f $1 ] ; then
