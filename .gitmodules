@@ -4,3 +4,12 @@
 [submodule ".config/scripts/afm"]
 	path = .config/scripts/afm
 	url = git@github.com:Sebastian-Soto-M/AutoFM.git
+[submodule ".config/dmenu"]
+	path = .config/dmenu
+	url = git@github.com:Sebastian-Soto-M/dmenu.git
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = git@github.com:Sebastian-Soto-M/dwm.git
+[submodule ".config/st"]
+	path = .config/st
+	url = git@github.com:Sebastian-Soto-M/st.git
