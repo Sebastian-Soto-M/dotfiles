@@ -1,4 +1,6 @@
 ! vi: ft=xdefaults
+#define bg  #282A36 
+#define fg  #F8F8F2
 #define c00 #21222C
 #define c08 #44475A
 #define c01 #FF5555
@@ -15,9 +17,6 @@
 #define c14 #9AEDFE
 #define c07 #BFBFBF
 #define c15 #E6E6E6
-
-#define bg  #282A36 
-#define fg  #F8F8F2
 
 *.background : bg
 *.foreground : fg
@@ -39,3 +38,6 @@
 *.color7     : c07
 *.color15    : c15
 
+#include "./dwm"
+#include "./dmenu"
+#include "./sxiv"

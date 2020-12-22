@@ -1,0 +1,11 @@
+! vi: ft=xdefaults
+dwm.normbordercolor : c15
+dwm.selbordercolor  : c12
+
+dwm.normbgcolor     : c00
+dwm.normfgcolor     : c08
+
+dwm.selbgcolor      : bg
+dwm.selfgcolor      : c04
+
+dwm.borderpx        : 2
