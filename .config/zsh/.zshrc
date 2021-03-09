@@ -66,7 +66,7 @@ source $ZDOTDIR/alias.zsh
 # TERMINAL TOOLS  CONFIGS #
 ###########################
 # bat
-export BAT_THEME="gruvbox"
+export BAT_THEME="Dracula"
 export  BAT_STYLE="numbers,grid"
 # asdf
 #. $ASDF_DATA_DIR/asdf.sh
@@ -88,7 +88,7 @@ export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
 # virtualenvwrapper
 export WORKON_HOME=~/.config/virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.9
 source $HOME/.local/bin/virtualenvwrapper.sh
 
 ######################
