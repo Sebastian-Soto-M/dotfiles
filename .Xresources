@@ -1,6 +1,1 @@
-! #include "/home/snsm/.config/X11/xresources/dracula_theme"
-#include "/home/snsm/.config/X11/xresources/gruvbox_dark_soft_aqua_theme"
-#include "/home/snsm/.config/X11/xresources/dwm"
-#include "/home/snsm/.config/X11/xresources/dmenu"
-!#include "/home/snsm/.config/X11/xresources/instantwm"
-! #include "/home/snsm/.config/X11/xresources/sxiv"
+#include "/home/snsm/.config/X11/xresources/themes/dracula/theme"

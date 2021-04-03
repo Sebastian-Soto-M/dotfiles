@@ -13,10 +13,12 @@ super + o ; {i,m,s,v,z}
     }
 
 # Open Firefox
-super + f ; {f,i,n,p,r,x}
-    firefox {_,https://www.notion.so/Intuite-2688111756ae4c429637d46af4db8005,\
-        https://www.notion.so/Home-92ac0ad387494917b2422cf95bf84893,--private-window,\
-            reddit.com,wiki.archlinux.org/index.php/XDG_Base_Directory}
+super + f ; {f,n,p,r,c,x}
+    firefox {_,https://www.notion.so/Home-92ac0ad387494917b2422cf95bf84893,\
+            --private-window,reddit.com,--new-instance chess.com,\
+            wiki.archlinux.org/index.php/XDG_Base_Directory}
+super + f ; m
+    surf material.angular.io/component
 
 # custom menu
 super + a ; {b,c,d,h,q,m,n,r,s,w}

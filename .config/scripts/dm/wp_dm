@@ -1,3 +1,3 @@
 #!/bin/sh
-chosen=$(fd . -e png -e jpg "$XDG_CONFIG_HOME/wallpapers/gruvbox" | sxiv -tio)
+chosen=$(fd . -e png -e jpg "$XDG_CONFIG_HOME/wallpapers" | sxiv -tio)
 [ ! -z $chosen ] && feh --bg-fill $chosen && notify-send -i $chosen "Wallpaper updated"
