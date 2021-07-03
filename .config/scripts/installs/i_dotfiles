@@ -1,4 +1,0 @@
-#!/bin/sh
-alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
-git clone --bare git@github.com:Sebastian-Soto-M/dotfiles.git $HOME/.config/dotfiles
-echo "Remember to run 'config checkout' to pull the dotfiles (this may require you to delete some existing files)\nAfter, logout or reboot for .zshenv to be sourced"

@@ -1,7 +1,0 @@
-! vi: ft=xdefaults
-dmenu.background    : bg
-dmenu.foreground    : c12
-dmenu.selbackground : c10 
-dmenu.selforeground : c08
-dmenu.adjbackground : c08
-dmenu.adjforeground : c14

@@ -1,9 +1,0 @@
-Mar 05 20:47 : exception: Failed to access /home/snsm/Music: No such file or directory
-Mar 05 20:47 : exception: Failed to open '/home/snsm/.config/mpd/state': No such file or directory
-Mar 05 20:47 : exception: inotify_add_watch() has failed: No such file or directory
-Mar 05 20:47 : avahi: Service 'Music Player @ mjro' successfully established.
-Mar 05 20:48 : exception: Failed to open '/home/snsm/.config/mpd/state': No such file or directory
-Mar 05 20:48 : avahi: Service 'Music Player @ mjro' successfully established.
-Mar 05 20:49 : exception: Failed to open '/home/snsm/.config/mpd/state': No such file or directory
-Mar 05 20:49 : avahi: Service 'Music Player @ mjro' successfully established.
-Mar 05 20:49 : avahi: Service 'Music Player @ mjro' successfully established.
